@@ -1,0 +1,225 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb}
+\usepackage[a4paper,left=.92in,right=.92in,top=.84in,bottom=.84in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Special Smith forms of the meander and chromatic-join matrices},pdfauthor={Iaroslav Argunov}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newenvironment{proof}[1][Proof]{\par\noindent\textit{#1.}\ }{\unskip\nobreak\hfill\(\square\)\par}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\vP}{v_P}
+\newcommand{\nc}{\mathcal P_n}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+\setlength{\emergencystretch}{1em}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Special Smith forms of the meander\\[.16em] and chromatic-join matrices\par}
+\vspace{.7em}{\large Iaroslav Argunov\par}
+\vspace{.2em}November 18, 2026
+\end{center}
+\begin{abstract}
+We construct a special Smith form over \(\mathbb Z[X,Y]\) for the
+two-variable chromatic-join matrix of noncrossing partitions, settling
+the first conjecture of Miller and Stanton. Their second conjecture,
+for the meander Gram matrix over \(\mathbb Z[x]\), follows by their
+equal-parameter specialization. A finite B\'ezout identity combines
+integral multiples of two-coloured Jones--Wenzl projectors and produces
+a unitriangular operation on rows of each Dyck height. The right multiplier has
+an entry formula in terms of two block counts and a prefix of arcs in distinct cycles.
+A reflection
+count accounts for the full determinant degree and makes the quotient
+unimodular. The connected matrix has integer Smith factors determined
+by the maximum heights of the paths.
+\end{abstract}
+\section{Matchings and partitions}
+
+Write \(\nc\) for the noncrossing perfect matchings of \(2n\) labelled
+points in boundary order, \(n\ge1\). The union of \(P,Q\in\nc\)
+consists of \(c(P,Q)\) alternating cycles, with a common edge counted
+as a cycle. The meander Gram matrix is
+\[
+                 G_n(x)_{P,Q}=x^{c(P,Q)} .
+\]
+The row and column orders agree. The heights of \(P\) are the numbers
+of arcs intersecting the gaps in the linear order of its endpoints.
+They give a Dyck path of length \(2n\); let \(h(P)\) be its maximum.
+For \(d\ge2\) define the monic polynomial
+\[
+ \Psi_d(x)=\prod_{\substack{1\le j<d\\(j,d)=1}}
+                  \bigl(x-2\cos(\pi j/d)\bigr),\qquad
+ s_k(x)=\prod_{d=2}^{k+1}\Psi_d(x).
+\]
+A special Smith form is a diagonal form with successive entries
+dividing one another, obtained by left and right transformations of
+determinant \(1\). The ring \(\ZZ[x]\) is not a principal ideal domain.
+
+
+For the cyclotomic polynomial \(\Phi_d\), set \(x=w+w^{-1}\) and \([1]=1,[2]=x,[j+1]=x[j]-[j-1]\). Then
+\begin{equation}
+ w^{\varphi(d)}\Psi_d(w+w^{-1})=\Phi_d(w^2),\qquad
+ [j]=\prod_{\substack{d\mid j\\d>1}}\Psi_d . \label{cyc}
+\end{equation}
+The first identity follows by matching roots and leading coefficients.
+Its Laurent expression after division by \(w^{\varphi(d)}\) is symmetric
+in \(w,w^{-1}\) with integer coefficients, hence lies in \(\ZZ[w+w^{-1}]\).
+The second identity follows by factoring
+\([j](w+w^{-1})=w^{1-j}(1+w^2+\cdots+w^{2j-2})\).
+
+\section{The two-variable chromatic-join form}
+\label{sec:two-colour}
+
+Write \(S=\ZZ[X,Y]\) and \(c=(0\,1\,\dots\,n-1)\). For a noncrossing
+partition \(\pi\) of \(\{0,\dots,n-1\}\), denote also by \(\pi\) the
+permutation obtained by reading each block in increasing cyclic order.
+Its Kreweras complement is the partition of cycles of \(\pi^{-1}c\),
+denoted by \(\pi'\). Joins in the following matrix are taken in the
+lattice of \emph{all} set partitions, and vertical bars count blocks:
+\[
+ J_n(X,Y)_{\pi,\rho}=X^{|\pi\vee\rho|}Y^{|\pi'\vee\rho'|}.
+\]
+Put \(B_2(z)=z\), and for \(d>2\) define \(B_d\in\ZZ[z]\) by
+\(\Psi_d(w)=B_d(w^2)\). The latter equality follows by pairing the
+opposite roots of the monic even polynomial \(\Psi_d\). These are
+the factors \(f_{d-1}\) of \cite[\S6.2.2]{ms}. For \(k\ge1\) put
+\[
+                     b_k(X,Y)=\prod_{d=2}^{k+1} B_d(XY).
+\]
+
+\begin{theorem}\label{thm:two-colour}
+Over \(\ZZ[X,Y]\), the special Smith form of \(J_n(X,Y)\) has one
+diagonal entry \(b_{h(P)}(X,Y)\) per noncrossing matching \(P\),
+in order of nondecreasing maximum height. This proves
+Conjecture~1 of Miller and Stanton.
+\end{theorem}
+
+First identify the entries with a spherical evaluation. Mark the
+open boundary interval from \(2i\) to \(2i+1\) black and the interval
+from \(2i+1\) to \(2i+2\) white, with endpoints taken modulo \(2n\).
+The matching attached to \(\pi\) joins \(2i+1\) to \(2\pi(i)\).
+It is the boundary of a thin neighbourhood of the disjoint polygons
+of the blocks, cut at the black intervals; conversely, the black
+regions recover these blocks. Following a white interval \(i\)
+through its endpoint \(2i+2\) reaches the odd endpoint indexed
+by \(\pi^{-1}(i+1)\). Thus the white regions give precisely \(\pi'\).
+After two disks are glued along their labelled boundaries, every
+complementary region meets a boundary interval, and the equivalence
+relation among intervals of either colour is generated by the
+relations from the two disks. Assigning weight \(X\) to every black
+region and \(Y\) to every white region on the sphere gives
+\(J_n(X,Y)_{\pi,\rho}\). In particular every entry is divisible by \(XY\).
+
+We use Hazi's two-coloured Temperley--Lieb category
+\cite[Theorem~A, equation~(7), Definition~3.3 and Lemma~3.5]{hazi}.
+Assign the parameters \(-X,-Y\) so that the colour inside a removed disk receives its named weight. In Hazi's convention a blue disk inside a red region has weight \(-[2]_s\). In these conventions deletion of an
+innermost circle has weight \(X\) or \(Y\) according to its interior
+colour. The planar evaluation omits its exterior region: to obtain the
+spherical weight, multiply by the colour of this last region. This
+also shows directly that the spherical evaluation is independent of
+which complementary region is chosen as exterior.
+
+
+Write \(\Theta_{d,u}\) for Hazi's primitive factor of index \(d\)
+in colour \(u\). For \(d=2\) it is the corresponding parameter
+\(-X\) or \(-Y\); for \(d>2\) it is \(B_d(XY)\) for both colours.
+The two-colour quantum integer is
+\([j]_u=\prod_{d\mid j,\,d>1}\Theta_{d,u}\).
+Write \(v_P\) for the row indexed by \(P\). Its area is the sum of
+the Dyck heights over all gaps. We use two facts about the generic
+two-colour projector: its coefficient on the identity diagram is one,
+and multiplication by an adjacent turnback annihilates it.
+Hazi's denominator and trace formulas will specify the multiple
+that can be inserted integrally. The argument below works in the
+polynomial ring even at specializations where both variables are
+nonunits. Earlier determinant formulas are due to Dahab \cite{dahab}
+and Di Francesco, Golinelli and Guitter \cite{dfgg}; the criterion
+for projector existence over a ring is discussed in \cite{webster,hazi}.
+
+\input{integral_gluing}
+\input{degree}
+\section{The connected matrix}
+
+Set \(H_n(P,Q)=\mathbf1_{\{c(P,Q)=1\}}\). Each entry of \(G_n(x)\)
+is divisible by \(x\), and \(H_n=(G_n(x)/x)|_{x=0}\).
+\begin{corollary}\label{integer}
+The integer Smith factors of \(H_n\), up to the usual positive signs,
+are
+\[
+       \operatorname{lcm}\bigl(1,\ldots,\lfloor(h(P)+1)/2\rfloor\bigr),
+           \qquad P\in\nc .
+\]
+In particular the rank over \(\F_p\) is the number of length-\(2n\)
+Dyck paths bounded above by \(2p-2\).
+\end{corollary}
+\begin{proof}
+Divide the polynomial matrix identity through by \(x=\Psi_2(x)\)
+and then set \(x=0\); the unimodular transformations specialize.
+With \(w=i\), \eqref{cyc} gives
+\(\left|\Psi_d(0)\right|=|\Phi_d(-1)|\).
+For \(d>2\) this equals \(p\) when \(d=2p^a\) for a prime \(p\)
+and \(a\ge1\), and equals \(1\) otherwise. This follows from
+\(\Phi_{2j}(-1)=\Phi_j(1)\) for odd \(j>1\), the elementary
+cyclotomic values at \(1\), and the power-of-two case.
+Multiplication gives the displayed least common multiple.
+It is divisible by \(p\) exactly when \(h(P)\ge2p-1\).
+\end{proof}
+
+For \(n=5\) the 42 paths give integer factors \(1^{16},2^{25},6^1\);
+in particular the connected matrix has rank 41 in characteristic
+three. The full polynomial equivalence also specializes at every
+integer loop weight, including the singular values. In the notation
+of Miller and Stanton, \(J_n(x,x)=xG_n(x)\), so their equal-parameter
+chromatic-join specialization follows as well.
+
+\input{blocks}
+
+\section{Polynomial certificates}
+The supplement gives the two small polynomial equivalences at each of
+orders four and five. At orders six, seven and eight the matrices have
+dimensions 132, 429 and 1430. For each of these orders the certificate records
+the sparse unitriangular multiplier; exact division reconstructs
+the quotient. In the grading of the preceding section, a homogeneous
+monomial of degree difference \(\delta\) specializing to \(x^j\)
+must be \(X^{(j+\delta)/2}Y^{(j-\delta)/2}\).
+The verifier checks both exponents for integrality and nonnegativity,
+reconstructs each matrix entry from the two partition joins, and
+checks the polynomial remainder of every entry. The degree argument
+of Section~\ref{sec:degree} certifies the two determinants. At \(n=8\)
+this verifies \(2{,}044{,}900\) entries in each ring. These finite
+tests use no specialization at sampled integer values. A separate program evaluates
+Corollary~\ref{cor:entries} and checks \(LG=DV\) coefficient by coefficient.
+At order eight the right multiplier has 675,204 nonzero entries taking 177 distinct
+nonzero values over the two-variable ring for the supplied weights. The supplement also
+checks the two shaded projector traces independently through six strands.
+\paragraph{Computational and writing assistance.}
+OpenAI Codex assisted with developing the proofs, constructing and testing
+the certificates, searching the literature and drafting the manuscript.
+\begin{thebibliography}{9}
+\bibitem{ms} A. R. Miller and D. Stanton,
+\emph{Orthogonal polynomials and Smith normal form},
+Monatsh. Math. \textbf{187} (2018), 125--145.
+\href{https://doi.org/10.1007/s00605-017-1082-6}{doi:10.1007/s00605-017-1082-6}.
+In the accepted version see \S6.3.2, eqs.~(64)--(65), and
+\S6.3.3, eq.~(69). The arXiv version states Conjecture~2 in \S6.2.3, eq.~(65).
+\href{https://arxiv.org/abs/1704.03539}{arXiv:1704.03539}.
+\bibitem{dahab} R. Dahab,
+\emph{The Birkhoff--Lewis equations}, Ph.D. thesis,
+University of Waterloo (1993), Theorems 1.8.1 and 2.5.2.
+\bibitem{dfgg} P. Di Francesco, O. Golinelli and E. Guitter,
+\emph{Meanders and the Temperley--Lieb algebra},
+Commun. Math. Phys. \textbf{186} (1997), 1--59.
+\href{https://arxiv.org/abs/hep-th/9602025}{arXiv:hep-th/9602025}.
+\bibitem{webster} B. Webster, \emph{The existence of Jones--Wenzl projectors},
+Appendix A to B. Elias and N. Libedinsky,
+\emph{Indecomposable Soergel bimodules for universal Coxeter groups},
+Trans. Amer. Math. Soc. \textbf{369} (2017), 3883--3910.
+\href{https://doi.org/10.1090/tran/6754}{doi:10.1090/tran/6754}.
+\bibitem{hazi} A. Hazi,
+\emph{Existence and rotatability of the two-colored Jones--Wenzl projector},
+Bull. Lond. Math. Soc. \textbf{56} (2024), 1095--1113.
+\href{https://doi.org/10.1112/blms.12983}{doi:10.1112/blms.12983}.
+\end{thebibliography}
+\end{document}

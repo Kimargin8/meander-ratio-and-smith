@@ -1,0 +1,28 @@
+\begin{corollary}\label{cor:entries}
+Fix the row order, the outermost prefixes and the B\'ezout weights above.
+The entries of the right multiplier in \(LJ_n=DV\) are determined
+by four integers. For \(P,Q\) write \(k=h(P)\), and let \(q\) be
+the length of the longest initial segment of the \(k\) chosen
+crossing arcs that belong to pairwise distinct cycles of \(P\cup Q\).
+Let \(a,a'\) be the two block counts in \(J_n(P,Q)\) and set
+\(\ell=\lfloor(q+1)/2\rfloor\). Then
+\[
+ V_{P,Q}=X^{a-\ell}Y^{a'-\ell}\,
+ \sum_{\substack{r\in I_{k+1}\\r\le q+1}}
+   a_{k+1,r}(XY)(XY)^{\,\ell-\lfloor r/2\rfloor}.
+\]
+\end{corollary}
+\begin{proof}
+In the weighted sum of \eqref{eq:through-quotient} the surviving
+prefixes have length at most \(q\). Applying the identity-box face
+count to the first \(q\) arcs gives \(a,a'\ge\ell\), whether or not
+\(q+1\) belongs to \(I_{k+1}\). Factoring out the displayed
+monomial gives the result.
+\end{proof}
+Thus at order \(n\) one can precompute at most \(n(n+1)/2\) univariate
+polynomials, one for each pair \(1\le q\le k\le n\).
+For a particular pair of matchings, a traversal of its alternating
+cycles determines \(q\). If the total number of cycles is less than
+\(\lfloor(k+1)/2\rfloor\), the sum is empty. In particular a connected
+pair gives a zero entry of \(V\) whenever the row height is at least
+three. These statements concern the change of basis.

@@ -1,0 +1,37 @@
+{
+  "ring": "(Z/p^e)[u,v]/(u^2-p,v^2-p)",
+  "matrix": "J/(XY) formed over Z[X,Y] before X=u,Y=v",
+  "last_bin": "valuation at least e",
+  "python": "3.13.5",
+  "numpy": "2.4.3",
+  "checks": [
+    {
+      "n": 8,
+      "partitions": 1430,
+      "scalar_dimension": 5720,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        1800,
+        1302,
+        14,
+        2604
+      ],
+      "matrix_sha256_u32le": "225f339c49b60650816d2844361f823378dad39bbc335b9ed06aeb264db368f4"
+    },
+    {
+      "n": 8,
+      "partitions": 1430,
+      "scalar_dimension": 5720,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        4712,
+        336,
+        0,
+        672
+      ],
+      "matrix_sha256_u32le": "1ad427b1fd5fd5d251f23675b7ed6097f97cd16b819e7c54cfec8a33c6807c05"
+    }
+  ]
+}

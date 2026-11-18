@@ -1,0 +1,87 @@
+\section{Integral elimination by a finite B\'ezout identity}
+\label{sec:integral-elimination}
+
+There is a direct construction of the row operation for \(J_n\).
+Its coefficients use a single univariate B\'ezout identity for each height.
+Write \(z=XY\), \(N=k+1\), and retain \(B_2(z)=z\) and the
+factors \(B_d(z)\) defined above. For \(2\le r\le N\) put
+\[
+ t_{N,r}(z)=\prod_{\substack{2\le d\le N\\d\nmid r}}B_d(z),
+ \qquad
+ I_N=\{r:2\le r\le N,\ 2r>N\}.
+\]
+
+\begin{lemma}
+There exist \(a_{N,r}(z)\in\mathbb Z[z]\) such that
+\(\sum_{r\in I_N}a_{N,r}(z)t_{N,r}(z)=1\).
+\end{lemma}
+\begin{proof}
+For incomparable indices \(d,e\) under divisibility the ideal
+\((B_d,B_e)\) is the unit ideal of \(\mathbb Z[z]\).
+Indeed specialize \(x_s=z,x_t=1\) in Hazi's
+two-colour B\'ezout identity for the primitive factors of colour \(s\)
+\cite[Lemma 3.5]{hazi}. This also covers an index equal to two.
+Multiply one such identity over every incomparable pair from
+\(\{2,\ldots,N\}\). In each expanded summand the indices whose
+factors were never selected form a chain. Choose \(r\in I_N\) divisible
+by the largest member of the chain, or any \(r\in I_N\) if the chain
+is empty. Such a multiple exists by choosing the largest multiple
+up to \(N\). Each \(d\nmid r\) has therefore been selected at least
+once, so the summand is a multiple of \(t_{N,r}\). Group the summands.
+The same reasoning applies to the empty product of identities.
+\end{proof}
+
+\begin{lemma}
+For a row of height \(k\) and each \(r\in I_N\), one can add an
+integral polynomial combination of rows of strictly smaller area
+to \(t_{N,r}(XY)v_P\) to obtain an element of
+\(b_k(X,Y)\mathbb Z[X,Y]^{|\mathcal P_n|}\).
+\end{lemma}
+\begin{proof}
+Work first in the generic two-colour diagram calculus. For either
+orientation \(u\), a common denominator of the coefficients of
+the Jones--Wenzl projector \(f^u_{r-1}\) is
+\[
+ g_{r-1,u}=\prod_{\substack{2\le d<r\\d\nmid r}}\Theta_{d,u}.
+\]
+This is the denominator statement in Hazi's proof of Theorem A
+\cite[\S4, Lemma 4.2 and the proof of Theorem A]{hazi}.
+Under \(x_s=-X, x_t=-Y\) the factors with \(d>2\) give
+\(B_d(XY)\). An index \(d=2\) contributes either \(-X\) or \(-Y\),
+both of which divide \(B_2(XY)\). Hence \(g_{r-1,u}\mid t_{N,r}(XY)\).
+The box \(t_{N,r}(XY)f^u_{r-1}\) is an integral polynomial
+linear combination of diagrams, with identity coefficient \(t_{N,r}(XY)\).
+
+Insert this box on \(r-1\) consecutive arcs crossing a maximal gap in
+\(P\). Every nonidentity term reduces the number crossing that gap.
+At any earlier gap, only the selected endpoints already encountered
+can contribute a crossing of a redrawn arc, and each contributed one
+previously. Use the reversed order at later gaps. Thus the remaining
+terms have smaller area. Each selected half-arc leads to a distinct
+marked boundary endpoint, so expanding the box creates no closed
+circle on the row side alone.
+
+\input{trace_argument}
+\end{proof}
+
+Multiply the rows of the second lemma by the coefficients of the
+first lemma and add. The coefficient of \(v_P\) is exactly one.
+Doing this for every \(P\), in increasing order of area, constructs
+a lower unitriangular \(L\) with \(LJ_n=DV\), where \(V\) has
+integral polynomial entries. The degree count in Section~\ref{sec:degree}
+gives \(\det V=1\). Multiplying by \(V^{-1}\) gives the claimed
+diagonal; simultaneous signed permutations sort the heights.
+For \(k=3\), the scalar identity in this construction is simply
+\[
+             1=(z-1)^2-z(z-2),\qquad I_4=\{3,4\}.
+\]
+Finally, at \(X=Y=x\) the spherical region count is the loop count
+plus one. Thus \(J_n(x,x)=xG_n(x)\), while
+\(b_k(x,x)=x\,s_k(x)\). Cancelling \(x\) in the matrix identity
+gives the one-variable special Smith form, preserving both
+determinants. Explicitly, its entries are \(s_{h(P)}(x)\) in
+nondecreasing order of height. This is Conjecture~2. The implication
+from the two-variable form was already recorded by Miller and
+Stanton \cite[arXiv version, equation (64)]{ms}.
+
+\input{entry_formula}

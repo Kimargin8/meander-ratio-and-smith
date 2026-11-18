@@ -1,0 +1,205 @@
+{
+  "ring": "(Z/p^e)[u,v]/(u^2-p,v^2-p)",
+  "matrix": "J/(XY) formed over Z[X,Y] before X=u,Y=v",
+  "last_bin": "valuation at least e",
+  "python": "3.13.5",
+  "numpy": "2.4.3",
+  "checks": [
+    {
+      "n": 1,
+      "partitions": 1,
+      "scalar_dimension": 4,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "matrix_sha256_u32le": "9259dcdb733e3e941f3deeb7107a8306fb322a9d6e96329d00ff7ab3ba431b7a"
+    },
+    {
+      "n": 1,
+      "partitions": 1,
+      "scalar_dimension": 4,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "matrix_sha256_u32le": "9259dcdb733e3e941f3deeb7107a8306fb322a9d6e96329d00ff7ab3ba431b7a"
+    },
+    {
+      "n": 2,
+      "partitions": 2,
+      "scalar_dimension": 8,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "matrix_sha256_u32le": "5113924248a24af3ce8830c0e77da65a374d9caaa2bb66aa991f3c0a2cf67455"
+    },
+    {
+      "n": 2,
+      "partitions": 2,
+      "scalar_dimension": 8,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "matrix_sha256_u32le": "6b9d29840a2aca4049036d5c6d9e0e49c49afbd115135eff61890d5cceb3c523"
+    },
+    {
+      "n": 3,
+      "partitions": 5,
+      "scalar_dimension": 20,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        17,
+        1,
+        0,
+        2
+      ],
+      "matrix_sha256_u32le": "bd84beb980f37faed664060cd699af051d0a05c5ac3d361a425c3591af314e53"
+    },
+    {
+      "n": 3,
+      "partitions": 5,
+      "scalar_dimension": 20,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        20,
+        0,
+        0,
+        0
+      ],
+      "matrix_sha256_u32le": "5ea43c014ae653abe05877d8e347e176a5d82d3d67a4ab509fcc2f6e9dc588db"
+    },
+    {
+      "n": 4,
+      "partitions": 14,
+      "scalar_dimension": 56,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        38,
+        6,
+        0,
+        12
+      ],
+      "matrix_sha256_u32le": "b8a6f1691b5d35d2ff5f3b3566965060dcba4c40ed0bc4e03628b490f752bf82"
+    },
+    {
+      "n": 4,
+      "partitions": 14,
+      "scalar_dimension": 56,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        56,
+        0,
+        0,
+        0
+      ],
+      "matrix_sha256_u32le": "95fc8f9eae0c2bfb7093c20815dc9d5d57d5d4e9a65f63140674f92217b79c93"
+    },
+    {
+      "n": 5,
+      "partitions": 42,
+      "scalar_dimension": 168,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        90,
+        26,
+        0,
+        52
+      ],
+      "matrix_sha256_u32le": "92cdb49faef295a16e3805240c34935e6de9fdb76f5e55bad0800f8365a92ce7"
+    },
+    {
+      "n": 5,
+      "partitions": 42,
+      "scalar_dimension": 168,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        165,
+        1,
+        0,
+        2
+      ],
+      "matrix_sha256_u32le": "64caae89818fe918d7cad80745aa3dc83adf0a8382809cd8e6b0f4ab54a6c78d"
+    },
+    {
+      "n": 6,
+      "partitions": 132,
+      "scalar_dimension": 528,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        228,
+        100,
+        0,
+        200
+      ],
+      "matrix_sha256_u32le": "cfbbf279436629968501e753a1f7a14bef23f22d6eb8b15bbace8aa4ec3cea08"
+    },
+    {
+      "n": 6,
+      "partitions": 132,
+      "scalar_dimension": 528,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        498,
+        10,
+        0,
+        20
+      ],
+      "matrix_sha256_u32le": "37bed45ad65765f2ac7c4dd2d84fe58561ed2e71e7793d62b2ca1d0694a08c24"
+    },
+    {
+      "n": 7,
+      "partitions": 429,
+      "scalar_dimension": 1716,
+      "p": 2,
+      "e": 3,
+      "additive_valuation_counts": [
+        620,
+        365,
+        1,
+        730
+      ],
+      "matrix_sha256_u32le": "5fbe64b1470cc8cb0d4777253ae6cc11340e7d1a3911ff1ac7c8558212610376"
+    },
+    {
+      "n": 7,
+      "partitions": 429,
+      "scalar_dimension": 1716,
+      "p": 3,
+      "e": 3,
+      "additive_valuation_counts": [
+        1524,
+        64,
+        0,
+        128
+      ],
+      "matrix_sha256_u32le": "2ea88ce8626f7c2fe141cd77ededbfecbb59717348107f7ff8b711ab81a7158b"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "order": 6,
+    "dimension": 132,
+    "each_ring_entries": 17424,
+    "nonzero_left": 1320,
+    "nonzero_quotient": 7149,
+    "max_quotient_degree": 14,
+    "det_left": 1,
+    "det_quotient": 1,
+    "rings": [
+      "Z[x]",
+      "Z[X,Y]"
+    ],
+    "input_sha256": "90f19f6723874b01613f392ad625e11f4573de35f1bc1176efccfb50322f8599"
+  },
+  {
+    "order": 7,
+    "dimension": 429,
+    "each_ring_entries": 184041,
+    "nonzero_left": 6885,
+    "nonzero_quotient": 67799,
+    "max_quotient_degree": 23,
+    "det_left": 1,
+    "det_quotient": 1,
+    "rings": [
+      "Z[x]",
+      "Z[X,Y]"
+    ],
+    "input_sha256": "39fd45f3012f4cc783635326854f76a9f010c87030efc94f5085f4cca79a3178"
+  },
+  {
+    "order": 8,
+    "dimension": 1430,
+    "each_ring_entries": 2044900,
+    "nonzero_left": 36722,
+    "nonzero_quotient": 675204,
+    "max_quotient_degree": 42,
+    "det_left": 1,
+    "det_quotient": 1,
+    "rings": [
+      "Z[x]",
+      "Z[X,Y]"
+    ],
+    "input_sha256": "720bf414603e8f3350968fd465c57271a7b9377f732daa6e1d6057137c9687d7"
+  }
+]

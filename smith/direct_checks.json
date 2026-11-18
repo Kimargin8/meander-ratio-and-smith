@@ -1,0 +1,35 @@
+[
+  {
+    "order": 6,
+    "dimension": 132,
+    "entries_per_ring": 17424,
+    "nonzero": 7149,
+    "zeros_forced_by_cutoff": 8513,
+    "distinct_nonzero_bivariate_entries": 58,
+    "distinct_nonzero_univariate_entries": 33,
+    "bivariate_row_major_sha256": "031e559c546f0c5dd5b04016925d45eb06a61c395b15595ce4cc1b598e57b551",
+    "left_file_sha256": "90f19f6723874b01613f392ad625e11f4573de35f1bc1176efccfb50322f8599"
+  },
+  {
+    "order": 7,
+    "dimension": 429,
+    "entries_per_ring": 184041,
+    "nonzero": 67799,
+    "zeros_forced_by_cutoff": 104756,
+    "distinct_nonzero_bivariate_entries": 104,
+    "distinct_nonzero_univariate_entries": 51,
+    "bivariate_row_major_sha256": "7f93c708f2e3201b685d6312b146d4b7db3c9f31e671fcd4f77e1099c83cd908",
+    "left_file_sha256": "39fd45f3012f4cc783635326854f76a9f010c87030efc94f5085f4cca79a3178"
+  },
+  {
+    "order": 8,
+    "dimension": 1430,
+    "entries_per_ring": 2044900,
+    "nonzero": 675204,
+    "zeros_forced_by_cutoff": 1293323,
+    "distinct_nonzero_bivariate_entries": 177,
+    "distinct_nonzero_univariate_entries": 77,
+    "bivariate_row_major_sha256": "e0f3664ee4a81232830dc25e5effa1a6a02943caed4437e36ffff422ec555414",
+    "left_file_sha256": "720bf414603e8f3350968fd465c57271a7b9377f732daa6e1d6057137c9687d7"
+  }
+]

@@ -1,0 +1,83 @@
+\section{The fixed-block-count grove pairing}
+
+Let \(1\le b\le n\), and index the rows of \(H_{n,b}\) by the
+noncrossing partitions \(\pi\) with \(b\) blocks and its columns by
+those \(\rho\) with \(n+1-b\) blocks. Put \(H_{n,b}(\pi,\rho)=1\)
+if \(\pi\vee\rho\) is the one-block partition and \(0\) otherwise.
+These square matrices are the complementary blocks of the grove
+pairing of Kenyon and Wilson
+(\href{https://arxiv.org/abs/math/0608422}{\emph{Boundary partitions
+in trees and dimers}}, \S2.2, equation (3)).
+
+\begin{corollary}\label{cor:grove-block}
+The positive Smith factors of \(H_{n,b}\) are
+\[
+ \operatorname{lcm}\bigl(1,\ldots,\lfloor(h(P)+1)/2\rfloor\bigr)
+\]
+over the Dyck paths \(P\) of length \(2n\) with exactly \(b\) upsteps
+in odd-numbered positions, counting the first step as position one.
+In particular \(\rk_{\F_2}H_{n,b}=\binom{n-1}{b-1}\).
+\end{corollary}
+
+\begin{proof}
+Write \(a=|\pi\vee\rho|\) and \(a'=|\pi'\vee\rho'|\).
+The plane bipartite multigraph with one vertex for each block of
+\(\pi\) and \(\rho\), and one edge per label joining its two blocks,
+has \(a\) components and \(a'\) faces. To see the latter, draw the two
+families of stars in opposite hemispheres. Their complementary regions
+join the white boundary intervals exactly as in
+Section~\ref{sec:two-colour}. Euler's formula gives
+\[
+             a-a'=|\pi|+|\rho|-n-1 .
+\]
+Grade \(\ZZ[X,Y]\) by \(\deg X=1,\deg Y=-1\). The entries of
+\(J_n/(XY)\) have the degrees on the right, and all diagonal factors
+\(b_{h(P)}/(XY)\) have degree zero. In the row relation of
+Theorem~\ref{thm:two-colour}, retain from the coefficient of each
+smaller row \(\tau\) only its homogeneous part of degree
+\(|\pi|-|\tau|\). Coordinatewise this extracts the homogeneous
+part of the degree of the original entry. The remainder is still
+divisible by the same homogeneous diagonal factor. We thus obtain
+\[
+ L\,(J_n/(XY))=D V,\qquad D_{P,P}=b_{h(P)}(X,Y)/(XY),
+\]
+where \(L\) is unitriangular by area and
+\(\deg V_{\pi,\rho}=|\pi|+|\rho|-n-1\) whenever the entry is nonzero.
+The determinant argument gives \(\det V=1\) for these choices as well.
+
+At \(X=Y=0\) a coordinate of \(J_n/(XY)\) survives precisely when
+\(a=a'=1\). The displayed degree identity identifies its complementary
+blocks with \(H_{n,b}\). Only degree-zero entries of \(L,V\) can
+survive, so \(L(0,0)\) preserves block count and \(V(0,0)\) pairs
+complementary counts. Each complementary square block of \(V(0,0)\)
+has determinant \(\pm1\), since their product up to sign is a unit.
+Each block of \(L(0,0)\) is unitriangular. Finally
+\(\lvert D_{P,P}(0,0)\rvert\) is the least common multiple in the
+statement, by \(B_d(0)=\Psi_d(0)\) for \(d>2\) and
+Corollary~\ref{integer}. In the fattening convention of
+Section~\ref{sec:two-colour}, the step at endpoint \(2i\), numbered
+\(2i+1\), opens an arc exactly when \(i\) is the minimum of its
+block. This identifies the required paths.
+\end{proof}
+
+More generally, put \(u=p^e\) for a prime \(p\) and \(e\ge1\).
+Let \(T_u(z)\) be the \((u-1)\)-by-\((u-1)\) tridiagonal matrix
+with diagonal \(1+z\), superdiagonal \(z\) and subdiagonal \(1\).
+The number of Smith factors of \(H_{n,b}\) having \(p\)-adic
+valuation less than \(e\) is
+\[
+              [z^{b-1}]\bigl(T_u(z)^{n-1}\bigr)_{1,1}.
+\]
+Indeed the height cutoff from Corollary~\ref{cor:grove-block} is
+\(2u-2\). Delete the first and last steps, then read the remaining
+steps in pairs between heights \(1,3,\ldots,2u-3\). Marking the
+second step of each pair by \(z\) if it rises gives precisely
+the entries of \(T_u\); the deleted first step supplies the one
+remaining marked rise. In particular \(T_2=(1+z)\), giving the
+binary rank in the corollary.
+
+For \(n=5,b=3\), the integral diagonal has six entries \(1\),
+thirteen entries \(2\), and one entry \(6\). A direct Smith reduction
+of the twenty-by-twenty matrix of joins gives the same list. The
+corresponding multiplicities for \(n=8,b=4\) are
+\(1^{35},2^{322},6^{126},12^7\).

@@ -1,0 +1,74 @@
+Fix the leftmost gap of maximum height in each row \(P\). At that
+gap order the crossing arcs from outermost to innermost. Use the
+first \(m=r-1\) for the insertion, so that the choices for different
+\(r\) are nested. Write \(K_{P,Q,r}\) for the value of the entry
+after inserting \(t_{N,r}(XY)f^u_m\) and closing with \(Q\).
+Put \(z=XY\) and
+\[
+                 E_r(z)=\prod_{\substack{d\mid r\\ d>2}} B_d(z).
+\]
+
+The complement of the box in the sphere is a disk. It contains
+circles and a matching of the \(2m\) ports. Delete the circles starting
+with any innermost disk on the side away from the box. Such a disk
+contains no port or arc ending at a port. The deletion contributes
+the colour weight of its interior face. The resulting monomial \(C\)
+is common to all terms of the projector and to the identity box:
+each term has the same prescribed boundary shading. After all these
+deletions, an arc returning to the same row of ports has an innermost
+adjacent turnback on that row, so the value with the projector is
+zero. This uses the turnback relation over the fraction field;
+the cleared box already has coefficients in the polynomial ring.
+
+If every complementary arc passes from one row of ports to the other,
+noncrossing forces the unique order-preserving matching. Choose
+the exterior point next to the left edge of the box and draw this
+matching as a right closure. Let \(w\in\{X,Y\}\) be the weight of the
+left face, and \(w'\) the opposite weight, so that \(ww'=z\).
+For the left boundary colour \(u\), Hazi's disk rule gives
+\([2]_u=-w'\). Closing the rightmost strand keeps the left boundary
+colour fixed. Iterating the partial trace identity
+\(\operatorname{pTr}(f_j^u)=-[j+1]_u f_{j-1}^u/[j]_u\)
+in the fraction field gives the planar scalar \((-1)^m[r]_u\)
+\cite[equation (7)]{hazi}. Multiplying by \(w\) counts the outer
+face once. The spherical values of the boxes alone are therefore
+\[
+ W_f=
+ \begin{cases}
+       z E_r(z),&r\ \text{even},\\
+       w E_r(z),&r\ \text{odd},
+ \end{cases}
+ \qquad
+ W_{\rm id}=w^{\lfloor m/2\rfloor+1}(w')^{\lceil m/2\rceil}.
+\]
+Indeed \([r]_u=E_r(z)\) for odd \(r\) and
+\([r]_u=-w' E_r(z)\) for even \(r\). For the identity, the \(m\)
+nested circles give alternating face colours starting with \(w\).
+Choosing the exterior point on the other side gives the same two
+spherical values: the side colours coincide for even \(m\), and both
+expressions are symmetric in them for odd \(m\). The boundary ports
+of the box stay fixed throughout. With the outside of the stack on
+the left, \(w=Y\) for the chosen prefix: the outer face of the
+matching meets the white interval from \(2n-1\) to \(0\).
+
+Write \(a=|\pi\vee\rho|\) and \(a'=|\pi'\vee\rho'|\). Restoring
+the identity box recovers the original pair, hence
+\(C W_{\rm id}=J_n(P,Q)=X^aY^{a'}\). Combining the two values with
+the definitions of \(t_{N,r}\) and \(b_k\) gives the exact quotient
+\begin{equation}
+\frac{K_{P,Q,r}}{b_k(X,Y)}
+=
+\begin{cases}
+ X^{a-\lfloor r/2\rfloor}Y^{a'-\lfloor r/2\rfloor},
+   &\text{the selected arcs lie in distinct cycles of }P\cup Q,\\
+ 0,&\text{otherwise}.
+\end{cases} \label{eq:through-quotient}
+\end{equation}
+To see the criterion, cut the \(m\) selected arcs in the identity
+diagram. When they belong to distinct cycles, the two ends of each
+one are connected by the remainder of its own cycle. Conversely, the
+unique through matching reconnects precisely those pairs, so
+restoring the identity puts each selected arc on its own cycle.
+In the through case the displayed quotient equals \(C\) for even
+\(r\) and \(wC\) for odd \(r\); its exponents are nonnegative.
+This proves the required integral divisibility for every pair.

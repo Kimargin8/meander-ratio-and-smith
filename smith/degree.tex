@@ -1,0 +1,47 @@
+\section{The degree of the determinant}
+\label{sec:degree}
+One can finish the unimodularity argument without assuming a determinant
+formula. We give the calculation for both rings. Write
+\(C_n=\binom{2n}{n}/(n+1)\) and \(c_j=\binom{2n}{n+j}\), extended by
+zero outside its range.
+
+\begin{lemma}
+\(\displaystyle\sum_{P\in\nc}\deg s_{h(P)}=nC_n.\)
+\end{lemma}
+\begin{proof}
+The reflection formula for walks between the absorbing walls at
+\(-1\) and \(d-1\) gives
+\(\sum_{j\in\mathbb Z}(c_{jd}-c_{jd+1})\) for the number of
+Dyck paths of length \(2n\) with maximum at most \(d-2\).
+For completeness, the image sum at an intermediate endpoint \(i\)
+uses the unrestricted counts from each \(2jd\) minus those from
+\(-2+2jd\). It vanishes at both walls by pairing reflected images,
+satisfies the nearest-neighbour recurrence, and at time zero is the
+point mass at the origin in the allowed strip. Evaluating it at
+time \(2n\) and endpoint zero gives the stated formula.
+Pair the terms with indices \(j\) and \(-j\). The number reaching
+height \(d-1\) is
+\(\sum_{m\ge1,\,d\mid m}(c_{m-1}-2c_m+c_{m+1})\).
+Since \(\deg\Psi_d=\varphi(d)\), summing these counts and using
+\(\sum_{d\mid m,\,d>1}\varphi(d)=m-1\) gives
+\[
+ \sum_{P\in\nc}\deg s_{h(P)}
+ =\sum_{m=2}^{n+1}(m-1)(c_{m-1}-2c_m+c_{m+1})
+ =c_1=nC_n.
+\]
+\end{proof}
+
+The diagonal of \(G_n\) has monomials \(x^n\); every off-diagonal
+entry has smaller degree. Thus its determinant is monic of degree
+\(nC_n\). Once \(L G_n=D V\) is integral with \(L\) unitriangular,
+the degree calculation forces \(\det V=1\).
+
+Likewise each diagonal entry of \(J_n\) has total degree \(n+1\):
+the sphere has one more region than loops. Every off-diagonal entry
+has total degree at most \(n\), so the unique determinant term of
+maximal degree comes from the identity permutation. Each \(b_h\)
+has total degree \(1+\deg s_h\), since \(b_h(x,x)=x\,s_h(x)\).
+Consequently the integral quotient determinant in \(LJ_n=DV\) is
+constant. Setting \(X=Y=x\) compares the monic leading terms, and
+the constant is \(+1\). This recovers the product of diagonal factors
+in Dahab's determinant evaluation.

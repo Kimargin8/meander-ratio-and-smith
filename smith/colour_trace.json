@@ -1,0 +1,146 @@
+{
+  "ring": "Z[X,Y], with projector coefficients in Q(X,Y)",
+  "max_strands": 6,
+  "results": [
+    {
+      "strands": 1,
+      "left_shade": "X",
+      "basis": 1,
+      "left_and_right_turnback_equations": 0,
+      "left_and_right_partial_trace_coefficients": 2,
+      "spherical_matchings_checked": 1,
+      "least_denominator": "1",
+      "unique_nonzero_spherical_closure": "X*Y"
+    },
+    {
+      "strands": 1,
+      "left_shade": "Y",
+      "basis": 1,
+      "left_and_right_turnback_equations": 0,
+      "left_and_right_partial_trace_coefficients": 2,
+      "spherical_matchings_checked": 1,
+      "least_denominator": "1",
+      "unique_nonzero_spherical_closure": "X*Y"
+    },
+    {
+      "strands": 2,
+      "left_shade": "X",
+      "basis": 2,
+      "left_and_right_turnback_equations": 2,
+      "left_and_right_partial_trace_coefficients": 2,
+      "spherical_matchings_checked": 2,
+      "least_denominator": "Y",
+      "unique_nonzero_spherical_closure": "X**2*Y - X"
+    },
+    {
+      "strands": 2,
+      "left_shade": "Y",
+      "basis": 2,
+      "left_and_right_turnback_equations": 2,
+      "left_and_right_partial_trace_coefficients": 2,
+      "spherical_matchings_checked": 2,
+      "least_denominator": "X",
+      "unique_nonzero_spherical_closure": "X*Y**2 - Y"
+    },
+    {
+      "strands": 3,
+      "left_shade": "X",
+      "basis": 5,
+      "left_and_right_turnback_equations": 8,
+      "left_and_right_partial_trace_coefficients": 4,
+      "spherical_matchings_checked": 5,
+      "least_denominator": "X*Y - 1",
+      "unique_nonzero_spherical_closure": "X**2*Y**2 - 2*X*Y"
+    },
+    {
+      "strands": 3,
+      "left_shade": "Y",
+      "basis": 5,
+      "left_and_right_turnback_equations": 8,
+      "left_and_right_partial_trace_coefficients": 4,
+      "spherical_matchings_checked": 5,
+      "least_denominator": "X*Y - 1",
+      "unique_nonzero_spherical_closure": "X**2*Y**2 - 2*X*Y"
+    },
+    {
+      "strands": 4,
+      "left_shade": "X",
+      "basis": 14,
+      "left_and_right_turnback_equations": 30,
+      "left_and_right_partial_trace_coefficients": 10,
+      "spherical_matchings_checked": 14,
+      "least_denominator": "X**2*Y**3 - 3*X*Y**2 + 2*Y",
+      "unique_nonzero_spherical_closure": "X**3*Y**2 - 3*X**2*Y + X"
+    },
+    {
+      "strands": 4,
+      "left_shade": "Y",
+      "basis": 14,
+      "left_and_right_turnback_equations": 30,
+      "left_and_right_partial_trace_coefficients": 10,
+      "spherical_matchings_checked": 14,
+      "least_denominator": "X**3*Y**2 - 3*X**2*Y + 2*X",
+      "unique_nonzero_spherical_closure": "X**2*Y**3 - 3*X*Y**2 + Y"
+    },
+    {
+      "strands": 5,
+      "left_shade": "X",
+      "basis": 42,
+      "left_and_right_turnback_equations": 112,
+      "left_and_right_partial_trace_coefficients": 28,
+      "spherical_matchings_checked": 42,
+      "least_denominator": "X**3*Y**3 - 5*X**2*Y**2 + 7*X*Y - 2",
+      "unique_nonzero_spherical_closure": "X**3*Y**3 - 4*X**2*Y**2 + 3*X*Y"
+    },
+    {
+      "strands": 5,
+      "left_shade": "Y",
+      "basis": 42,
+      "left_and_right_turnback_equations": 112,
+      "left_and_right_partial_trace_coefficients": 28,
+      "spherical_matchings_checked": 42,
+      "least_denominator": "X**3*Y**3 - 5*X**2*Y**2 + 7*X*Y - 2",
+      "unique_nonzero_spherical_closure": "X**3*Y**3 - 4*X**2*Y**2 + 3*X*Y"
+    },
+    {
+      "strands": 6,
+      "left_shade": "X",
+      "basis": 132,
+      "left_and_right_turnback_equations": 420,
+      "left_and_right_partial_trace_coefficients": 84,
+      "spherical_matchings_checked": 132,
+      "least_denominator": "X**5*Y**6 - 9*X**4*Y**5 + 30*X**3*Y**4 - 45*X**2*Y**3 + 29*X*Y**2 - 6*Y",
+      "unique_nonzero_spherical_closure": "X**4*Y**3 - 5*X**3*Y**2 + 6*X**2*Y - X"
+    },
+    {
+      "strands": 6,
+      "left_shade": "Y",
+      "basis": 132,
+      "left_and_right_turnback_equations": 420,
+      "left_and_right_partial_trace_coefficients": 84,
+      "spherical_matchings_checked": 132,
+      "least_denominator": "X**6*Y**5 - 9*X**5*Y**4 + 30*X**4*Y**3 - 45*X**3*Y**2 + 29*X**2*Y - 6*X",
+      "unique_nonzero_spherical_closure": "X**3*Y**4 - 5*X**2*Y**3 + 6*X*Y**2 - Y"
+    }
+  ],
+  "incorrect_normalizations_detected": {
+    "omit_spherical_face": {
+      "order": 1,
+      "left": "X",
+      "correct": "X*Y",
+      "mutated": "Y"
+    },
+    "swap_denominator_shade": {
+      "order": 2,
+      "left": "X",
+      "correct": "Y",
+      "mutated": "X"
+    },
+    "swap_outermost_face": {
+      "order": 2,
+      "left": "X",
+      "correct": "X**2*Y - X",
+      "mutated": "X*Y**2 - Y"
+    }
+  }
+}
