@@ -1,0 +1,119 @@
+\subsection*{Consecutive ratios at all nonnegative activities}
+\begin{theorem}\label{thm:all-weighted-ratios}
+For \(u,v\ge0\), let \(\rho(u,v)\) be the first positive solution of
+\(f_{u,v}(\rho)=1/\mu\), before any positive pole. Then
+\[
+       \lim_{n\to\infty}\frac{Z_{n+1}(u,v)}{Z_n(u,v)}
+                 =\frac{1}{\rho(u,v)} .
+\]
+In particular the ratio for avoidance of both signs tends to
+\((\mu-1+\sqrt{\mu^2-6\mu+1})/2\).
+\end{theorem}
+\begin{proof}
+First consider the root limit. Theorem~\ref{thm:joint} and
+Corollary~\ref{cor:double} give it in the interior and at the origin.
+On the axis \(u=0,\ v>0\), the upper splice used in the proof of
+Theorem~\ref{thm:joint} preserves positive avoidance. It can add one
+negative occurrence and loses none. Thus
+\(Z_{r+s}(0,v)\ge\min(1,v)Z_r(0,v)Z_s(0,v)\).
+Reflection gives the other axis. Fekete's lemma and the radius
+calculation in that theorem give the root limit \(g=1/\rho(u,v)\)
+throughout. Since \(Z_n(u,v)\ge A_n\), this limit exceeds one and
+all sufficiently large terms are positive.
+
+Use the four crossing moves of Theorem~\ref{thm:idle-shifts},
+from \href{https://arxiv.org/pdf/cond-mat/0008178#page=7}{Jensen's
+transfer} and the word description of Albert and Paterson \cite{AP}.
+In a signature, list the exposed strand ends across the cut, with a
+divider indicating the line. The letter \(U\) inserts the two ends of a
+new strand at the divider. The letter \(D\) joins the two ends next to
+the divider, provided they belong to distinct strands. The letter \(R\)
+moves the last left end to the right and \(L\) moves the first right
+end to the left. Pair the internal letters of a meander word starting
+immediately after its initial \(U\), omitting its final \(D\).
+Every tested site is a triple \(pab\), where \(ab\) is one of these
+pairs and \(p\) is the preceding letter. One sign occurs precisely when
+\[
+         p\in\{U,L\},\quad a=R,\quad b\in\{D,L\},
+\]
+and the other when \(p\in\{U,R\},\ a=L,\ b\in\{D,R\}\).
+Indeed the two short arches require an opening and a closing in
+consecutive positions, first on one side and then on the other.
+Identify the left side of the list with the upper half-plane of
+the arch diagram. Then \(R\) closes above and opens below, so the
+first test has weight \(u\), the second \(v\). Reflection exchanges
+the tests.
+
+Record the previous letter together with the signature. Let \(W\)
+count allowed pairs on this state space, multiplying each pair by
+the activity of its sign, or by one when neither sign occurs. At a
+pair boundary the number of ends on each side is odd. The initial
+state is a single strand across the divider with previous letter
+\(U\). It cannot occur after a pair, since any subsequent \(U\)
+inserts a new strand in a nonempty signature. Let \(\alpha\) be the
+weighted row after the first pair from this initial state, and let
+\(\beta\) indicate the single-strand signature across the divider
+with any attainable previous letter. Jensen's final closure then gives
+\[
+                  Z_{N+2}(u,v)=\alpha W^N\beta \qquad (N\ge0).
+\]
+Here \(W\) acts on the states reachable after at least one pair,
+with all original strand pairings retained. All products are
+entrywise finite by the four-letter rule.
+
+For every such state we exhibit two returns that preserve its previous
+letter and create no marked site. In the table, a bar divides the
+exposed ends. The letters \(a,b\) represent ends of pre-existing
+strands. Equal digits are the two ends of one local strand. The names
+of local strands can be reassigned after each pair. The last column
+records the exposed ends after each successive pair of letters.
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Previous & Initial ends & Pairs & Ends after the pairs\\
+\midrule
+\(\mathrm R\)&\(\mathrm{a|b}\)&
+\(\mathrm{UL,DR}\)&\(\mathrm{a11|b,\ a|b}\)\\
+& &\(\mathrm{UL,LR,DR}\)&\(\mathrm{a11|b,\ a11|b,\ a|b}\)\\[2pt]
+\(\mathrm D\)&\(\mathrm{a|b}\)&
+\(\mathrm{LU,UR,DD}\)&\(\mathrm{ab1|1,\ ab1|221,\ a|b}\)\\
+& &\(\mathrm{UU,LL,DR,RD}\)&\(\mathrm{a12|21b,\ a1221|b,\ ab1|1,\ a|b}\)\\[2pt]
+\(\mathrm U\)&\(\mathrm{ab1|1}\)&
+\(\mathrm{UR,DD,LU}\)&\(\mathrm{ab1|221,\ a|b,\ ab1|1}\)\\
+& &\(\mathrm{UL,DR,RD,LU}\)&\(\mathrm{ab122|1,\ ab1|1,\ a|b,\ ab1|1}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Reflection gives the two returns for previous letter \(L\) from the
+\(R\) rows. When the previous letter is \(U\), the central ends are
+paired. There is at least one older strand, and each side has an even
+number of other ends. Hence one side has at least two. Display the
+two nearest on that side as \(a,b\), reflecting the \(U\) rows if
+necessary. Every other exposed end stays outside the calculation.
+For previous letter \(R,L\) or \(D\), a single nearest end on each
+side suffices. No step joins \(a\) to \(b\), so \(a\) and \(b\) may
+also be paired in the full signature. Each
+listed word ends in its prescribed previous letter. Checking its pairs
+in order against the two triples above gives weight one, including
+the first pair at the incoming boundary.
+
+The return lengths in pairs are \(2,3\) or \(3,4\). Repeating a
+return of length 2 gives length 4, so \(W^d\ge I\) entrywise for
+\(d=3,4\), for every \(u,v\ge0\).
+Fix either \(d\), and for each residue class take a sufficiently large
+representative \(r\) that \(\alpha W^r\beta>0\). Then
+\[
+ \alpha W^{r+dj}\beta
+   =\sum_{i=0}^j\binom ji\alpha W^r(W^d-I)^i\beta .
+\]
+The binomial weights on the right are nonnegative, the zeroth is
+positive, and the \(j\)-th root of the left side tends to \(g^d>1\).
+Lemma~\ref{lem:binomial-smoothing} gives
+\(Z_{n+d}/Z_n\to g^d\) on each residue class and hence on their
+finite union. Finally
+\[
+      \frac{Z_{n+1}}{Z_n}
+        =\frac{Z_{n+4}/Z_n}{Z_{n+4}/Z_{n+1}}\ \longrightarrow\ g .
+\]
+\end{proof}

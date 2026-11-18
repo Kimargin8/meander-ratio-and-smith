@@ -1,0 +1,37 @@
+\begin{lemma}\label{lem:binomial-smoothing}
+Let \(b_j\geq 0\), \(b_0>0\), and
+\(a_N=\sum_{j=0}^N\binom Nj b_j\).
+If \(a_N^{1/N}\to\lambda\) with \(1<\lambda<\infty\), then
+\(a_{N-1}/a_N\to 1/\lambda\).
+\end{lemma}
+\begin{proof}
+Write \(A(z)=\sum a_Nz^N\) and \(B(t)=\sum b_jt^j\).
+For \(0\leq z<1\), summation of nonnegative terms gives
+\(A(z)=(1-z)^{-1}B(z/(1-z))\), allowing infinite sums.
+Since \(A\) has radius \(1/\lambda\), the radius of \(B\) is
+\(1/(\lambda-1)\). For every \(\epsilon>0\) we thus have
+\(b_j\leq C_\epsilon(\lambda-1+\epsilon)^j\) for all \(j\).
+
+Give \(J_N\) the law
+\(\Pr(J_N=j)=\binom Nj b_j/a_N\) and put \(p=(\lambda-1)/\lambda\).
+For \(t=j/N\), the binomial theorem gives \(\binom Nj\leq e^{NH(t)}\),
+where \(H(t)=-t\log t-(1-t)\log(1-t)\), with \(0\log0=0\).
+The continuous function
+\[
+ f(t)=H(t)+t\log(\lambda-1)-\log\lambda
+\]
+has unique maximum \(f(p)=0\) on \([0,1]\).
+Fix \(\eta>0\) such that \(K=\{t\in[0,1]:|t-p|\geq\eta\}\) is
+nonempty, and set \(d=-\max_{K}f>0\).
+Choose \(\epsilon>0\) with
+\(\log(1+\epsilon/(\lambda-1))<d/3\).
+For sufficiently large \(N\),
+\(N^{-1}\log a_N\geq\log\lambda-d/3\).
+Consequently
+\[
+ \Pr(J_N/N\in K)\leq (N+1)C_\epsilon e^{-Nd/3}.
+\]
+It follows that \(\mathbb E[J_N/N]\to p\). The identity
+\(\binom{N-1}{j}=(1-j/N)\binom Nj\) now gives
+\(a_{N-1}/a_N=1-\mathbb E[J_N/N]\to1/\lambda\).
+\end{proof}

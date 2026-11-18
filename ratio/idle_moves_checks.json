@@ -1,0 +1,61 @@
+{
+  "input_sha256": "f4a7b3ca6fc1ac097fa2f6aaef2d8988974984c97a52917a85735d15e048b3f9",
+  "first_order": 1,
+  "matching_orders": 8,
+  "M_C_by_order": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      42,
+      10
+    ],
+    [
+      262,
+      70
+    ],
+    [
+      1828,
+      376
+    ],
+    [
+      13820,
+      2484
+    ],
+    [
+      110954,
+      16578
+    ]
+  ],
+  "transfer_orders": 6,
+  "transfer": {
+    "words": [
+      "LR",
+      "RL",
+      "URDL",
+      "UURDDL"
+    ],
+    "distinct_odd_states_checked": 2813,
+    "reachable_widths": [
+      1,
+      6,
+      29,
+      134,
+      614,
+      2813
+    ],
+    "control_words_rejected_at_base": [
+      "UD",
+      "RR"
+    ]
+  }
+}

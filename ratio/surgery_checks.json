@@ -1,0 +1,173 @@
+{
+  "parameters": {
+    "max_order": 8,
+    "surgery_through": 7,
+    "rooted": true,
+    "swap_colours": false,
+    "wraparound": false
+  },
+  "python": "3.13.5",
+  "script_sha256": "e76825cb189d5f3c06977c98589d39a02140d5af86ee7a90300ec02f067d021e",
+  "input": "Generated from bracket words; no sequence data is read.",
+  "orders": [
+    {
+      "n": 1,
+      "ordered_pairs": 1,
+      "M": 1,
+      "B": 1,
+      "signed_prescriptions": 1,
+      "positive_subsets": 1,
+      "nonempty_disjoint_block_families": 0,
+      "contraction_expansion_roundtrips": 0,
+      "avoiding_seam_roundtrips": 0,
+      "arbitrary_seam_roundtrips": 0,
+      "two_sign_avoidance": 1,
+      "avoiding_both_seam_roundtrips": 0,
+      "conditioned_subset_identities": 1,
+      "seam_sign_changes": {}
+    },
+    {
+      "n": 2,
+      "ordered_pairs": 4,
+      "M": 2,
+      "B": 1,
+      "signed_prescriptions": 3,
+      "positive_subsets": 2,
+      "nonempty_disjoint_block_families": 2,
+      "contraction_expansion_roundtrips": 2,
+      "avoiding_seam_roundtrips": 1,
+      "arbitrary_seam_roundtrips": 1,
+      "two_sign_avoidance": 0,
+      "avoiding_both_seam_roundtrips": 0,
+      "conditioned_subset_identities": 2,
+      "seam_sign_changes": {
+        "(0, 1)": 1
+      }
+    },
+    {
+      "n": 3,
+      "ordered_pairs": 25,
+      "M": 8,
+      "B": 5,
+      "signed_prescriptions": 9,
+      "positive_subsets": 4,
+      "nonempty_disjoint_block_families": 7,
+      "contraction_expansion_roundtrips": 10,
+      "avoiding_seam_roundtrips": 2,
+      "arbitrary_seam_roundtrips": 4,
+      "two_sign_avoidance": 2,
+      "avoiding_both_seam_roundtrips": 0,
+      "conditioned_subset_identities": 4,
+      "seam_sign_changes": {
+        "(-1, 1)": 1,
+        "(0, 0)": 1,
+        "(0, 1)": 2
+      }
+    },
+    {
+      "n": 4,
+      "ordered_pairs": 196,
+      "M": 42,
+      "B": 23,
+      "signed_prescriptions": 27,
+      "positive_subsets": 8,
+      "nonempty_disjoint_block_families": 20,
+      "contraction_expansion_roundtrips": 66,
+      "avoiding_seam_roundtrips": 11,
+      "arbitrary_seam_roundtrips": 20,
+      "two_sign_avoidance": 8,
+      "avoiding_both_seam_roundtrips": 2,
+      "conditioned_subset_identities": 8,
+      "seam_sign_changes": {
+        "(-1, 0)": 1,
+        "(-1, 1)": 3,
+        "(0, 0)": 6,
+        "(0, 1)": 10
+      }
+    },
+    {
+      "n": 5,
+      "ordered_pairs": 1764,
+      "M": 262,
+      "B": 135,
+      "signed_prescriptions": 81,
+      "positive_subsets": 16,
+      "nonempty_disjoint_block_families": 54,
+      "contraction_expansion_roundtrips": 506,
+      "avoiding_seam_roundtrips": 56,
+      "arbitrary_seam_roundtrips": 116,
+      "two_sign_avoidance": 48,
+      "avoiding_both_seam_roundtrips": 8,
+      "conditioned_subset_identities": 16,
+      "seam_sign_changes": {
+        "(-1, 0)": 7,
+        "(-1, 1)": 13,
+        "(0, 0)": 39,
+        "(0, 1)": 57
+      }
+    },
+    {
+      "n": 6,
+      "ordered_pairs": 17424,
+      "M": 1828,
+      "B": 867,
+      "signed_prescriptions": 243,
+      "positive_subsets": 32,
+      "nonempty_disjoint_block_families": 143,
+      "contraction_expansion_roundtrips": 4302,
+      "avoiding_seam_roundtrips": 341,
+      "arbitrary_seam_roundtrips": 756,
+      "two_sign_avoidance": 278,
+      "avoiding_both_seam_roundtrips": 52,
+      "conditioned_subset_identities": 32,
+      "seam_sign_changes": {
+        "(-1, 0)": 46,
+        "(-1, 1)": 70,
+        "(0, 0)": 273,
+        "(0, 1)": 367
+      }
+    },
+    {
+      "n": 7,
+      "ordered_pairs": 184041,
+      "M": 13820,
+      "B": 6051,
+      "signed_prescriptions": 729,
+      "positive_subsets": 64,
+      "nonempty_disjoint_block_families": 376,
+      "contraction_expansion_roundtrips": 39302,
+      "avoiding_seam_roundtrips": 2234,
+      "arbitrary_seam_roundtrips": 5376,
+      "two_sign_avoidance": 1778,
+      "avoiding_both_seam_roundtrips": 310,
+      "conditioned_subset_identities": 64,
+      "seam_sign_changes": {
+        "(-1, 0)": 319,
+        "(-1, 1)": 437,
+        "(0, 0)": 2029,
+        "(0, 1)": 2591
+      }
+    },
+    {
+      "n": 8,
+      "ordered_pairs": 2044900,
+      "M": 110954,
+      "B": 44747,
+      "signed_prescriptions": 2187,
+      "positive_subsets": 128,
+      "nonempty_disjoint_block_families": 986,
+      "contraction_expansion_roundtrips": 0,
+      "avoiding_seam_roundtrips": 15715,
+      "arbitrary_seam_roundtrips": 40908,
+      "two_sign_avoidance": 11844,
+      "avoiding_both_seam_roundtrips": 2034,
+      "conditioned_subset_identities": 128,
+      "seam_sign_changes": {
+        "(-1, 0)": 2348,
+        "(-1, 1)": 3028,
+        "(0, 0)": 15888,
+        "(0, 1)": 19644
+      }
+    }
+  ]
+}

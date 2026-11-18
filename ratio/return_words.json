@@ -1,0 +1,176 @@
+{
+  "coverage": [
+    {
+      "port_pairs": 1,
+      "all_odd_split_matchings": 1
+    },
+    {
+      "port_pairs": 2,
+      "all_odd_split_matchings": 4
+    },
+    {
+      "port_pairs": 3,
+      "all_odd_split_matchings": 15
+    },
+    {
+      "port_pairs": 4,
+      "all_odd_split_matchings": 56
+    },
+    {
+      "port_pairs": 5,
+      "all_odd_split_matchings": 210
+    },
+    {
+      "port_pairs": 6,
+      "all_odd_split_matchings": 792
+    },
+    {
+      "port_pairs": 7,
+      "all_odd_split_matchings": 3003
+    },
+    {
+      "port_pairs": 8,
+      "all_odd_split_matchings": 11440
+    }
+  ],
+  "states": 15521,
+  "Q_returns_at_e": {
+    "2": [
+      "LURD",
+      "RULD",
+      "ULDR",
+      "URDL"
+    ],
+    "3": [
+      "LURRLD",
+      "LUURDD",
+      "RULLRD",
+      "RUULDD",
+      "ULDURD",
+      "ULRRDL",
+      "URDULD",
+      "URLLDR",
+      "UULDDR",
+      "UURDDL"
+    ],
+    "4": [
+      "LULURDRD",
+      "LURDLURD",
+      "LURDRULD",
+      "LURDULDR",
+      "LURDURDL",
+      "LURRLLRD",
+      "LURRULDD",
+      "LURULDRD",
+      "LURURDLD",
+      "LUULDRRD",
+      "LUULRRDD",
+      "LUURDLRD",
+      "LUURDRLD",
+      "LUURRDDL",
+      "LUUURDDD",
+      "RULDLURD",
+      "RULDRULD",
+      "RULDULDR",
+      "RULDURDL",
+      "RULLRRLD",
+      "RULLURDD",
+      "RULULDRD",
+      "RULURDLD",
+      "RURULDLD",
+      "RUULDLRD",
+      "RUULDRLD",
+      "RUULLDDR",
+      "RUURDLLD",
+      "RUURLLDD",
+      "RUUULDDD",
+      "ULDRLURD",
+      "ULDRRULD",
+      "ULDRULDR",
+      "ULDRURDL",
+      "ULDURRLD",
+      "ULDUURDD",
+      "ULLURDDR",
+      "ULLURRDD",
+      "ULRRDULD",
+      "ULRRLLDR",
+      "ULRULDDR",
+      "ULRURDDL",
+      "ULULDRDR",
+      "ULURDLDR",
+      "ULURDRDL",
+      "URDLLURD",
+      "URDLRULD",
+      "URDLULDR",
+      "URDLURDL",
+      "URDULLRD",
+      "URDUULDD",
+      "URLLDURD",
+      "URLLRRDL",
+      "URLULDDR",
+      "URLURDDL",
+      "URRULDDL",
+      "URRULLDD",
+      "URULDLDR",
+      "URULDRDL",
+      "URURDLDL",
+      "UULDDURD",
+      "UULDRRDL",
+      "UULLDRRD",
+      "UULLRDDR",
+      "UURDDULD",
+      "UURDLLDR",
+      "UURRDLLD",
+      "UURRLDDL",
+      "UUULDDDR",
+      "UUURDDDL"
+    ]
+  },
+  "words_returning_every_test_state": {
+    "2": 4,
+    "3": 10,
+    "4": 70
+  },
+  "entries_M_Q_B_at_e": [
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      1
+    ],
+    [
+      8,
+      4,
+      5
+    ],
+    [
+      42,
+      10,
+      23
+    ],
+    [
+      262,
+      70,
+      135
+    ],
+    [
+      1828,
+      376,
+      867
+    ],
+    [
+      13820,
+      2484,
+      6051
+    ],
+    [
+      110954,
+      16578,
+      44747
+    ]
+  ]
+}

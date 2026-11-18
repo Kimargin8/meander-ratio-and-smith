@@ -1,0 +1,68 @@
+\begin{corollary}\label{cor:uniform-weighted-ratios}
+The convergence in Theorem~\ref{thm:all-weighted-ratios} is uniform on
+every compact subset of \([0,\infty)^2\), including sets meeting either
+axis.
+\end{corollary}
+\begin{proof}
+Write \(\theta=(u,v)\) and \(g(\theta)=1/\rho(u,v)\).
+The first root of \(f_{u,v}(z)=1/\mu\) is simple, lies on the
+increasing branch, and precedes the first positive pole, as shown in
+Theorem~\ref{thm:joint}. The implicit function theorem therefore gives
+continuity of \(g\) up to the boundary of the quadrant. For every
+\(1<c<g(0,0)\) and every sufficiently large \(n\),
+\(Z_n(\theta)\ge A_n\ge c^n\) throughout the quadrant.
+Moreover, if \(n_j\to\infty\) and \(\theta_j\to\theta\), then
+\[
+       Z_{n_j}(\theta_j)^{1/n_j}\longrightarrow g(\theta).
+\]
+Indeed the coefficients of \(Z_n\) are nonnegative. Bound
+\(\theta_j\) coordinatewise between
+\(\theta^-=\max(0,\theta-\delta\mathbf 1)\) and
+\(\theta^+=\theta+\delta\mathbf 1\), apply the root limit at those two
+fixed points, then let \(\delta\downarrow0\), where \(\mathbf 1=(1,1)\).
+
+Fix \(d\in\{3,4\}\). In each residue class modulo \(d\) choose
+\(r\ge1\) with \(A_{r+2}>0\). In the transfer notation of the theorem put
+\[
+ a_j(\theta)=Z_{r+dj+2}(\theta),\qquad
+ b_i(\theta)=\alpha W^r(W^d-I)^i\beta,\qquad
+ a_j=\sum_{i=0}^j\binom ji b_i .
+\]
+The unmarked return at every state gives a constant term at least one
+in every diagonal entry of \(W^d\). Thus each \(b_i\) is a polynomial
+with nonnegative coefficients, and
+\(b_0(\theta)\ge A_{r+2}>0\). Along any \(\theta_j\to\theta\) we have
+\(a_j(\theta_j)^{1/j}\to\lambda=g(\theta)^d>1\).
+
+Give \(J_j=i\) probability \(\binom ji b_i(\theta_j)/a_j(\theta_j)\).
+At the fixed upper point \(\theta^+\), the generating-function
+identity in Lemma~\ref{lem:binomial-smoothing} gives
+\(\limsup_i b_i(\theta^+)^{1/i}=g(\theta^+)^d-1\).
+Hence for any \(\epsilon>0\), all sufficiently large \(j\) and all \(i\),
+\[
+ b_i(\theta_j)\le b_i(\theta^+)
+            \le C_{\delta,\epsilon}\bigl(g(\theta^+)^d-1+\epsilon\bigr)^i .
+\]
+Write \(H(t)=-t\log t-(1-t)\log(1-t)\) with \(0\log0=0\).
+For any nonempty closed \(F\subset[0,1]\), the entropy bound on
+\(\binom ji\) and the root limit for \(a_j(\theta_j)\) imply
+\[
+ \limsup_{j\to\infty}j^{-1}\log\Pr(J_j/j\in F)
+ \le \max_{t\in F}\{H(t)+t\log(\lambda-1)-\log\lambda\}.
+\]
+Here one first uses \(g(\theta^+)^d-1+\epsilon\) in place of
+\(\lambda-1\), then sends \(\delta,\epsilon\) to zero. The continuous
+expression on the right has unique maximum zero at \(1-1/\lambda\) on
+\([0,1]\). Thus \(J_j/j\) concentrates there and its expectation
+converges to that point. The binomial ratio identity gives
+\[
+       \frac{a_{j-1}(\theta_j)}{a_j(\theta_j)}
+                =1-\mathbb E[J_j/j]\longrightarrow g(\theta)^{-d}.
+\]
+Every sequence of parameters in a compact set admits a convergent
+subsequence, and the residue classes are finite. Since \(g\) is
+continuous and finite there, this proves uniform convergence of the
+forward \(d\)-step ratios to \(g^d\). Taking the quotient of the
+four-step ratio at \(n\) and the three-step ratio at \(n+1\) gives
+the assertion, since the latter tends uniformly to \(g^3\ge g(0,0)^3>1\).
+\end{proof}

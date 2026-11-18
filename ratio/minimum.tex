@@ -1,0 +1,17 @@
+\begin{corollary}\label{cor:minimum-return}
+For every \(k\ge0\), the minimum diagonal entry of \(Q^k\) equals
+\((Q^k)_{ee}=C_{k+1}\).
+\end{corollary}
+\begin{proof}
+Take a word returning \(e\) to itself. At a general odd cut mark the
+nearest end on either side as an input. At each prefix the word uses only
+these ends and their successors, since in the run from \(e\) it always
+finds an available end on the required side. Its diagram in a rectangle
+therefore has two inputs and two outputs. It has no internal circle.
+Joining its inputs would make a circle when the starting arc of \(e\)
+is restored, so both inputs pass through. Planarity fixes the order of
+the two outputs. Gluing this rectangle to any original signature recreates
+that signature. No prefix can close a component, since a closed component
+persists. Every word counted at \(e\) is therefore counted on each
+diagonal; the entry at \(e\) attains the bound.
+\end{proof}

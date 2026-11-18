@@ -1,0 +1,26 @@
+\subsection*{The longest run of one orientation}
+Set \(N=n-1\), and let \(L_n\) be the longest run of positive sites.
+Conditional on \(X_n^+=x\), the indicator word is uniform among the
+\(\binom Nx\) words with \(x\) ones. The lengths of the runs of ones,
+including zero-length gaps, form a uniform weak composition of \(x\)
+into \(g=N-x+1\) parts. If \(Y_r\) counts parts of length at least
+\(r\ge1\), subtract \(r\) from each of \(j\) ordered selected parts:
+\[
+ {\mathbb E}[(Y_r)_j\mid X_n^+=x]=(g)_j\frac{(x)_{jr}}{(N)_{jr}}
+ \quad(j\le g,\ jr\le x).
+\]
+Here the parentheses denote falling factorials; outside this range
+the moment is zero. For \(x/N\) in a compact subinterval of \((0,1)\)
+and \(r=O(\log N)\), the right-hand side is
+\([g(x/N)^r]^j(1+O_j((r+1)^2/N))\) for fixed \(j\).
+At \(r\) just above \((1+\epsilon)\log N/\log(N/x)\), the first
+moment tends to zero. Just below
+\((1-\epsilon)\log N/\log(N/x)\), the first moment diverges and the
+ratio of the second factorial moment to its square tends to one.
+Rounding to integers, Markov's inequality and the second moment
+bound place \(L_n\) between these thresholds with probability tending
+to one. Since \(X_n^+/N\to1/\mu\), we obtain
+\[
+                         L_n/\log n\ \longrightarrow\ 1/\log\mu
+                         \qquad\hbox{in probability}.
+\]

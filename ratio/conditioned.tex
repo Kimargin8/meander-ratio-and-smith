@@ -1,0 +1,85 @@
+\section{Conditioning on avoidance of one orientation}
+
+Let \(B_n\) count connected meanders with no positive site, and put
+\(b=\mu-1\), so \(B_n^{1/n}\to b\). Give this avoidance class the
+uniform probability measure. Write \(Y\) for the number of negative
+sites under this measure. In this section the site set is
+\(V_n=\{0,\ldots,n-2\}\).
+
+\begin{theorem}\label{thm:conditional-ratio}
+The one-orientation avoidance counts satisfy
+\[
+             \lim_{n\to\infty}\frac{B_n}{B_{n-1}}=b .
+\]
+In the interior, the negative-site indicators converge to a stationary
+two-dependent process. For a finite set \(T\subset\mathbb Z\), with
+\(k=|T|\) and \(d=|((T-1)\cup(T+1))\setminus T|\), its intersection
+probabilities are
+\[
+   \mathbb P(\text{all sites of }T\text{ are negative})
+             =b^{-k}(1+b^{-1})^d .
+\]
+In particular its one-site density equals \((b+1)^2/b^3\).
+\end{theorem}
+
+\begin{proof}
+At finite order fix \(T\subseteq V_n\) and take the exterior neighbours
+only in \(V_n\), so that
+\(d=|(((T-1)\cup(T+1))\cap V_n)\setminus T|\).
+A negative site excludes a positive site at its own location and at
+each neighbour. There remain \(L=n-1-k-d\) sites at which a positive
+occurrence must be excluded. Fixed-site contraction and
+inclusion--exclusion give the count
+\[
+ \sum_{j=0}^{L}(-1)^j\binom Lj M_{n-k-j}
+       =\sum_{a=0}^{d}\binom da B_{n-k-a}.                 \tag{*}
+\]
+For the equality, the left-hand sum also counts order-\((n-k)\)
+meanders avoiding positives at any prescribed \(L\) sites.
+Their exact positive set is a subset of the other \(d\) sites.
+The exact-set formula gives the right-hand sum.
+
+The ratio follows from Theorem~\ref{thm:idle-shifts} at \(t=1\).
+Divide \((*)\) by \(B_n\) and use the consecutive-ratio limit for
+each of its finitely many terms. Sets \(T\) translated into the
+interior retain both exterior neighbours whenever these are distinct.
+The resulting intersection probabilities determine every finite law by
+inclusion--exclusion and are translation invariant. If two sets have
+mutual distance at least three, both \(k\) and \(d\) add for each choice
+of subsets; their joint law factors. Singletons at distance two have
+three distinct exterior neighbours in total, giving strictly less than
+the product of their one-site probabilities.
+\end{proof}
+
+The same law arises from conditioning in a finite window of the
+unconditioned limiting coloured process. Let \(p=1/\mu\), let \(T\) be
+finite, and let \(W\) contain \(T\) and its neighbours. Prescribing
+negatives on \(T\) excludes positives on \(k+d\) sites of \(W\).
+Inclusion--exclusion on the remaining sites gives the intersection
+probability \(p^k(1-p)^{|W|-k-d}\). Dividing by
+\(\mathbb P(\text{no positive in }W)=(1-p)^{|W|}\) gives exactly
+\(b^{-k}(1+b^{-1})^d\), independently of how far \(W\) extends beyond
+the neighbours. Thus conditioning the finite meander on avoidance
+throughout its full site set has the same local limit as this
+finite-window calculation.
+
+\subsection*{A finite entropy comparison in the full class}
+For \(n\ge2\) put \(N=n-1\), \(p=1/\mu\), and \(q_n=M_{n-1}/M_n\).
+Writing \(D\) for binary relative entropy, one has
+\[
+ N D(q_n\Vert p)\le
+      \log\!\left(\frac{b\mu^{\,N}}{M_n}\right),\qquad
+ |q_n-p|\le
+      \sqrt{\frac{1}{2N}\log\!\left(\frac{b\mu^{\,N}}{M_n}\right)}.
+\]
+Indeed \(B_j\le b^j\) by supermultiplicativity. A particular binary
+indicator word of weight \(k\) has probability \(B_{n-k}/M_n\),
+whereas its probability under the product Bernoulli-\(p\) law is
+\(b^{N-k}/\mu^N\). Thus the relative entropy of the full law with
+respect to the product law is at most the logarithm displayed above.
+Subadditivity of Shannon entropy bounds it below by the sum of the
+\(N\) one-site divergences. Finally \(D(q\Vert p)\ge2(q-p)^2\),
+as follows by twice differentiating in \(q\). The right-hand side of
+the first inequality is \(o(n)\) by root growth. This also proves the
+unconditioned ratio theorem directly. A numerical error bound from
+this expression requires information about \(\mu\).

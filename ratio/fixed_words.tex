@@ -1,0 +1,23 @@
+\begin{corollary}
+Fix \(d=3\) or \(4\). For each attainable state after the first pair,
+choose one of the \(d\)-pair unmarked returns constructed in the proof
+(for length four, a two-pair return may be repeated). At \(k\)
+prescribed disjoint intervals of \(d\) pairs, all after the first
+pair, the probability of seeing the chosen word at every interval
+under the \((u,v)\)-weighted law is exactly
+\[
+                    \frac{Z_{n-dk}(u,v)}{Z_n(u,v)}
+\]
+whenever the placement is possible and the denominator is positive.
+For fixed \(k\) this tends to \(\rho(u,v)^{dk}\).
+\end{corollary}
+\begin{proof}
+Delete the indicated words. Each restores its full incoming state,
+including the previous letter, and contributes weight one.
+Conversely the prescribed positions and the state there determine
+each inserted word uniquely. This bijection preserves the weight of
+the rest of the diagram. The ratio limit gives the assertion. Applying
+the same formula to each subset shows joint convergence of the indicators
+on disjoint intervals to independent Bernoulli variables of parameter
+\(\rho(u,v)^d\).
+\end{proof}

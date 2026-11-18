@@ -1,0 +1,97 @@
+\section{The two orientation counts}
+\label{sec:joint}
+Write \(X_n^+,X_n^-\) for the positive and negative counts. For \(u,v\ge0\) let
+\[
+ Z_n(u,v)=\sum_{P\in\M_n}u^{X_n^+(P)}v^{X_n^-(P)},\qquad
+ f_{u,v}(z)=z\left(\frac1{1-(u-1)z}+
+                        \frac1{1-(v-1)z}-1\right).
+\]
+Here \(\M_n\) is the set of connected diagrams, and \(0^0=1\).
+Let \(R=1/\mu\) and \(\M(z)=\sum_{n\ge1}M_nz^n\).
+
+\begin{theorem}\label{thm:joint}
+As a formal power series,
+\[
+             \sum_{n\ge1} Z_n(u,v)z^n=\M(f_{u,v}(z)).
+\]
+For \(u,v>0\), let \(\rho(u,v)\) be the first positive solution of
+\(f_{u,v}(\rho)=R\), before any positive pole. Then
+\(\lim Z_n(u,v)^{1/n}=1/\rho(u,v)\). Under the uniform measure,
+\((X_n^+/n,X_n^-/n)\) satisfies a large-deviation principle at speed \(n\)
+with good rate function
+\[
+ I(a,b)=\sup_{s,t\in\mathbb R}
+       \bigl\{as+bt+\log\bigl(\mu\,\rho(e^s,e^t)\bigr)\bigr\}.
+\]
+\end{theorem}
+\begin{proof}
+Give each marked positive site weight \(u-1\), each marked negative
+site weight \(v-1\), and sum over subsets of actual occurrences.
+On contracting the marked runs, every even vertex of a diagram of
+order \(m\) has three possibilities: it remains unchanged, carries a
+nonempty positive run, or carries a nonempty negative run. A run of
+length \(j\) increases the order by \(j\). The \(m\) vertices can be
+expanded independently by Lemma~\ref{lem:contract}, which gives the
+formal identity with both activities.
+
+In the upper-arch splice of two diagrams the only positive occurrence
+which can be lost is the first site of the right diagram. A negative
+occurrence can be gained only at the seam. Indeed every short deleted
+upper arch starts at an even label, the long new arch has length at
+least three, and the new short upper arch starts at an odd label.
+The lower matching remains unchanged. Removing the two crossing upper
+arches inverts the splice at its specified position. Thus, for
+\(u,v>0\),
+\[
+ Z_{r+s}(u,v)\ \geq\ \min(1,u^{-1})\min(1,v)\,Z_r(u,v)Z_s(u,v).
+\]
+Fekete's lemma, applied after this constant rescaling, gives root
+convergence. The counts have an exponential upper bound by the
+Catalan-square estimate and the bounded number of sites.
+
+For nonnegative activities and real \(z\) before the first pole,
+\[
+ f'_{u,v}(z)=\frac1{(1-(u-1)z)^2}+\frac1{(1-(v-1)z)^2}-1
+             \ \geq\ 2/(1+z)^2-1.
+\]
+On \([0,\sqrt2-1)\) the right-hand side is positive. If a positive pole
+occurs within this interval the function tends to infinity there.
+Otherwise \(f_{u,v}\ge f_{0,0}=z(1-z)/(1+z)\) and the latter reaches
+\(3-2\sqrt2>R\) at its maximum, since \(\mu>11\) \cite{AP}. This proves
+existence and uniqueness of the first root on the increasing branch,
+with strictly positive derivative. The composition is analytic along
+the positive interval before this root. Its coefficients are
+nonnegative, so Pringsheim's theorem rules out a smaller radius.
+Analyticity across the root would, by the local inverse, continue
+\(\M\) across its positive singularity at \(R\). Hence the radius is
+exactly \(\rho\). This radius argument includes zero activities.
+
+The limiting logarithmic moment generating function for the two
+counts is \(-\log(\mu\rho(e^s,e^t))\). It is differentiable on all of
+\(\mathbb R^2\) by the implicit function theorem. The rescaled counts
+lie in a compact triangle. The G\"artner--Ellis theorem
+\cite[Theorem 2.3.6]{DZ} now gives the asserted full large-deviation
+principle for open and closed sets.
+\end{proof}
+
+\begin{corollary}\label{cor:double}
+Let \(A_n=Z_n(0,0)\) count diagrams avoiding both signs. Then
+\[
+ \lim_{n\to\infty} A_n^{1/n}
+       = \frac{\mu-1+\sqrt{\mu^2-6\mu+1}}{2}.
+\]
+\end{corollary}
+\begin{proof}
+In a connected left factor of order \(r\ge2\), its last pair of
+vertices cannot have both an upper and a lower short arch: that would
+be an isolated cycle. If the lower arch is absent, use the upper
+splice, so no negative site appears at the seam. Otherwise use the
+lower splice; the absence of the last upper arch prevents a positive
+site at the seam. The chosen colour is recovered from the two arches
+crossing the cut. Thus \(A_{r+s}\ge A_r A_s\) for \(r\ge2,s\ge1\).
+Here \(A_1=1,A_2=0,A_3=2\), so every \(A_n\) for \(n\ge3\) is
+positive. For fixed \(k\ge3\) write \(n=jk+\ell\) with
+\(3\le\ell\le k+2\); this proves root convergence by the usual
+supermultiplicative argument. Its limit is the reciprocal of the
+first solution of \(z(1-z)/(1+z)=1/\mu\).
+\end{proof}

@@ -1,0 +1,122 @@
+\section{Binomial shifts of the meander numbers}\label{sec:idle-moves}
+
+Write \(M(z)=\sum_{n\ge1}M_nz^n\), where \(2n\) is the number of
+crossings, and put
+\[
+     F_t(z)=M\!\left(\frac{z}{1+tz}\right),\qquad
+     F_{t,n}=[z^n]F_t(z),\qquad C_n=F_{2,n}.
+\]
+Thus \(F_{0,n}=M_n\), and the one-sign avoidance identity gives
+\(F_{1,n}=B_n\).
+
+\begin{theorem}\label{thm:idle-shifts}
+All coefficients of \(F_t\) are nonnegative if and only if \(t\le2\).
+For each real \(t\le2\) they are eventually positive and
+\[
+       \lim_{n\to\infty}\frac{F_{t,n+1}}{F_{t,n}}=\mu-t .
+\]
+In particular the assertion at \(t=2\) holds despite \(C_2=0\).
+Writing \(E M_n=M_{n+1}\), one has
+\((E-2)^kM_n\ge0\) for every \(k\ge0\) and \(n\ge1\).
+\end{theorem}
+
+\begin{proof}
+Use the four-letter sweep of a closed meander
+\cite{Jensen,AP}. Turn the fixed line vertical and sweep upwards.
+The state records the ordered ends on each side of the line and which
+two ends belong to the same unfinished arc. A letter \(U\) creates a
+fresh arc with one end on either side. A letter \(D\) joins the two
+nearest ends on opposite sides. The letters \(R,L\) move the nearest
+end from left to right and from right to left, respectively.
+An unfinished word may never close a component. The first letter is
+\(U\), giving a state \(e\) with one arc. The last letter is \(D\),
+and its preceding state must be \(e\). The choices of letters determine
+the two noncrossing matchings, since an end always closes against the
+nearest available end on its side.
+
+After an odd number of crossings there is at least one end on either
+side. Indeed, on each side the number of ends equals the number of
+crossings processed minus twice the number of completed matching edges
+on that side. Divide the \(2n-2\) interior letters into consecutive
+disjoint pairs, beginning immediately after the first \(U\). Write
+\(T_{xy}\) for the number of legal two-letter words taking odd-cut
+state \(x\) to state \(y\). Each row has sum at most sixteen, so every
+entry of every power used below is a finite sum. Bijectivity of the
+sweep gives \(M_{m+1}=(T^m)_{ee}\). At each odd cut the distinct pairs
+\(LR\) and \(RL\) are legal and return the original state. Delete these
+two choices at every state and call the resulting matrix \(Q=T-2I\).
+In particular \(d_m=(Q^m)_{ee}\) counts meanders of order \(m+1\)
+with neither pair in the designated positions.
+
+The binomial theorem now gives
+\[
+   M_{m+1}=\sum_{j=0}^m\binom mj 2^{m-j}d_j,\qquad
+   (E-2)^kM_n=(T^{n-1}Q^k)_{ee}.
+\]
+The first identity gives \(d_m=C_{m+1}\) by binomial inversion, and
+the second proves the finite-difference assertion. More generally, for
+\(s=2-t\) another binomial expansion gives
+\begin{equation}\label{eq:idle-weight}
+   F_{t,m+1}=\big((Q+sI)^m\big)_{ee}
+            =\sum_{j=0}^m\binom mj s^{m-j}d_j .
+\end{equation}
+This follows also by substituting \(z/(1-sz)\) in \(F_2\).
+It proves nonnegativity when \(s\ge0\). The coefficient
+\(F_{t,2}=M_2-tM_1=2-t\) gives the converse.
+
+Concatenating two return words at \(e\) gives
+\(d_{m+h}\ge d_md_h\). The first four values are
+\(d_0=1,\ d_1=0,\ d_2=4,\ d_3=10\), by binomial inversion from
+\(M_1=1,\ M_2=2,\ M_3=8,\ M_4=42\). Every integer \(m\ge2\) is
+a sum of twos and threes, so \(d_m>0\) in this range. Put
+\(c=\sup_{k\ge2} d_k^{1/k}\le16\). For fixed \(k\ge2\) and all
+large \(m\), write \(m=ak+b\) with \(2\le b\le k+1\).
+Then \(d_m\ge d_k^a d_b\), so \(d_m^{1/m}\to c\) and \(c\ge2\).
+For \(s>0\), the \(m\)-th root of the right side of
+\eqref{eq:idle-weight} tends to \(s+c\). The upper bound follows
+from \(d_j\le c^j\). For the lower bound use \(d_j\ge(c-\epsilon)^j\)
+for all sufficiently large \(j\), with \(0<\epsilon<c\). The finitely
+many omitted terms are \(O(m^K s^m)\) for fixed \(K\), which has
+smaller exponential growth than \((s+c-\epsilon)^m\). Setting \(s=2\)
+identifies \(c=\mu-2\). For any \(s>0\), the sequence
+\(a_m=s^{-m}F_{t,m+1}\) is the binomial transform of the nonnegative
+sequence \(s^{-j}d_j\) with initial term one, and its root tends to
+\(1+c/s>1\). Lemma~\ref{lem:binomial-smoothing} gives
+\(F_{t,m+2}/F_{t,m+1}\to s+c=\mu-t\).
+
+It remains to treat \(s=0\). Two longer return words are available
+at every odd cut even after the two original pairs have been deleted:
+\[
+               UR\mid DL,\qquad UU\mid RD\mid DL .
+\]
+Here the bars mark the disjoint pairs. To verify both words, note that
+\(URD\) has exactly the effect of \(R\) whenever a left end is present.
+The new arc created by \(U\) is separate from every old component.
+The next letter moves its left end to the right. The letter \(D\)
+joins that end to the original nearest left end, extending the old
+arc by the fresh arc and placing its end on the right. The order and
+pairing of the other ends are unchanged. Thus \(URDL\) returns the
+original state, as in Albert and Paterson's zero-displacement example
+\cite{AP}. In \(U(URD)DL\) the inner \(URD\) acts on the fresh
+left end of the outer \(U\), and replacing it by \(R\) leaves \(URDL\).
+Both constructions are legal even at \(e\). In particular
+\(Q^r-I\) is entrywise nonnegative for \(r=2,3\).
+
+Fix \(r\in\{2,3\}\) and use \(j=2,\ldots,r+1\) as representatives
+of all residue classes modulo \(r\). Then
+\[
+ d_{rm+j}
+    =\sum_{\ell=0}^m\binom m\ell
+         \big(Q^j(Q^r-I)^\ell\big)_{ee}.
+\]
+The coefficients are nonnegative, their initial term is \(d_j>0\),
+and the \(m\)-th root of the left side tends to \(c^r>1\).
+Lemma~\ref{lem:binomial-smoothing} therefore gives
+\(d_{n+r}/d_n\to c^r\) along every residue class and hence along
+all integers. Finally,
+\[
+    \frac{d_{n+1}}{d_n}
+       =\frac{d_{n+3}/d_n}{d_{n+3}/d_{n+1}}\longrightarrow c .
+\]
+Since \(d_n=C_{n+1}\), this proves the endpoint assertion.
+\end{proof}

@@ -1,0 +1,337 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,left=1.02in,right=1.02in,top=.92in,bottom=.92in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Local arch statistics and ratio limits for closed meanders},pdfauthor={Iaroslav Argunov}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newenvironment{proof}{\par\noindent\textit{Proof.}\ }{\unskip\nobreak\hfill\(\square\)\par}
+\newcommand{\M}{\mathcal M}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\bin}[2]{\binom{#1}{#2}}
+\newcommand{\pos}{\mathord{+}}
+\newcommand{\negat}{\mathord{-}}
+\setlength{\emergencystretch}{1em}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Local arch statistics and ratio limits for closed meanders\par}
+\vspace{.55em}
+{\large Iaroslav Argunov\par}
+\vspace{.15em}
+{November 18, 2026}
+\end{center}
+\begin{abstract}
+Let \(M_n\) count connected meanders on \(2n\) ordered intersections,
+and let \(\mu\) be their exponential growth constant. We mark two
+orientations of an adjacent pair of arches. Contracting prescribed
+marks gives the exact joint generating series. For every pair of
+nonnegative mark weights, the ratio of consecutive partition sums
+converges to the reciprocal of its first positive singularity,
+uniformly on compact subsets of the closed weight quadrant.
+This includes forbidding either orientation or both. In the class
+avoiding one orientation the remaining marks have a two-dependent
+local limit. We also study the binomial shifts
+\(M(z/(1+tz))\). They have nonnegative coefficients precisely for
+\(t\le2\), with consecutive ratio tending to \(\mu-t\) throughout
+this range. The ordinary ratio theorem admits a short derivation
+from Jensen's transfer and Kesten's ratio limit lemma.
+\end{abstract}
+
+\section{A local statistic}
+A closed meander on \(2n\) points is an ordered pair of noncrossing
+perfect matchings on \(0,1,\ldots,2n-1\) whose union is connected.
+Draw the first matching above the line and the second below.
+The order of the points and the choice of half-planes are fixed.
+At \(n=1\) the union consists of two parallel edges. The first counts
+are \(M_1=1,M_2=2,M_3=8,M_4=42\).
+
+There are \(n-1\) test sites. Site \(i\), \(0\le i\le n-2\), is
+\emph{positive} when the top matching joins \(2i\) to \(2i+1\) and
+the bottom matching joins \(2i+1\) to \(2i+2\). A \emph{negative}
+site uses the opposite colours. The line has two ends, so no site
+wraps around. Write \(X_n\) for the number of positive sites in a
+uniform connected meander.
+
+\begin{center}
+\setlength{\unitlength}{1pt}
+\begin{picture}(206,49)
+\put(1,26){\line(1,0){85}}\put(121,26){\line(1,0){85}}
+\qbezier(14,26)(30,54)(46,26)\qbezier(46,26)(62,-2)(78,26)
+\qbezier(134,26)(150,-2)(166,26)\qbezier(166,26)(182,54)(198,26)
+\multiput(14,26)(32,0){3}{\circle*{3.4}}
+\multiput(134,26)(32,0){3}{\circle*{3.4}}
+\put(32,0){\makebox(30,8){\small positive}}\put(152,0){\makebox(30,8){\small negative}}
+\end{picture}
+\end{center}
+
+The growth constant exists by classical concatenation arguments
+\cite{AP}. Root growth by itself permits oscillation between consecutive
+orders. A count of a single positive site measures precisely the ratio
+of two consecutive terms. Counting prescribed sites gives the finite marking law and two
+proofs of the ordinary ratio. Our main extension, Theorem~\ref{thm:all-weighted-ratios},
+allows the two orientations to have arbitrary nonnegative weights.
+For both weights zero the result gives the consecutive ratio in the
+class with neither pattern.
+
+\section{Contraction and exchangeability}
+Throughout, \([h]\) denotes a set of \(h\) consecutive sites, with
+\([0]=\varnothing\). Write \(B_n\) for the number of order-\(n\)
+connected meanders with no positive site.
+
+\begin{lemma}\label{lem:contract}
+Specify signs on a set \(S\subseteq[n-1]\) of \(k\) sites. The number
+of meanders realising all prescriptions is \(M_{n-k}\), unless two
+adjacent specified sites have opposite signs, in which case it is zero.
+\end{lemma}
+\begin{proof}
+Adjacent sites share one vertex. Incompatible signs require it to have
+two incident arches of the same colour. With compatible signs, a run of
+\(s\) consecutive marked sites is an alternating path on \(2s+1\)
+consecutive vertices. There are two free incidences, one at each end
+and of opposite colours. Collapse the path to a single vertex with
+these two incidences. This shortens the unique cycle and preserves the
+ordering of the exterior arches in each half-plane. The runs occupy
+disjoint intervals, and contraction removes \(2k\) vertices in total.
+
+Given the smaller meander, the marked positions determine which vertices
+to expand. The prescribed sign of each run determines where its upper
+and lower exterior arches attach. Every new interior arch joins
+consecutive labels, so none crosses an exterior arch. The operations
+are inverses, including when the two exterior arches reach the same vertex.
+\end{proof}
+
+\begin{theorem}\label{thm:law}
+For every \(S\subseteq[n-1]\) the number of meanders whose set of
+positive sites is \emph{exactly} \(S\) equals \(B_{n-|S|}\). In
+particular,
+\begin{equation}\label{eq:bin}
+ M_n=\sum_{k=0}^{n-1}\bin{n-1}{k}B_{n-k},\qquad
+ \Prb(X_n=k)=\bin{n-1}{k}\frac{B_{n-k}}{M_n}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Excluding positive occurrences at all sites outside \(S\) costs, by
+inclusion--exclusion and Lemma~\ref{lem:contract},
+\[
+  \sum_{h=0}^{n-1-|S|}(-1)^h\bin{n-1-|S|}{h}M_{n-|S|-h}.
+\]
+Taking \(S=\varnothing\) at order \(n-|S|\) identifies this as
+\(B_{n-|S|}\). Summing over sets of size \(k\) gives the two formulas.
+\end{proof}
+
+There is also a direct inverse for this exact-set contraction. Along
+a positive run the lower exterior incidence lies at its left end,
+the upper at its right end. The tests for positivity at the two
+neighbouring exterior sites therefore survive contraction unchanged.
+Expanding a chosen even vertex of an avoiding diagram into a prescribed
+positive run restores exactly its marked sites.
+
+\section{Exponential rates and the ratio theorem}
+The avoidance counts have their own growth constant. To see this, lay
+two avoiding meanders of orders \(r,s\) side by side. Remove the upper
+arch \((a,2r-1)\) at the right end of the first and the upper arch
+\((2r,b)\) at the left end of the second. Insert
+\((a,b)\) and \((2r-1,2r)\). The first new arch encloses the two
+pieces formerly under the removed arches; the second spans consecutive
+labels. The operation merges the two cycles, and their original ends
+can be recovered at the fixed seam. The short new upper arch starts at
+an odd label and the other has length at least three. Neither is the
+upper arch of a positive site. A possible new triple at the seam would
+need a lower arch crossing the seam or a new positive upper arch.
+Hence \(B_{r+s}\ge B_rB_s\). The construction also works without the
+avoidance condition.
+
+Since \(B_1=1\), these inequalities and the Catalan-square upper bound
+give finite limits \(b=\lim B_n^{1/n}\ge1\) and
+\(\mu=\lim M_n^{1/n}\). For \(0<\epsilon<b\) there are positive
+constants \(c,C\) such that
+\(c(b-\epsilon)^j\le B_j\le C(b+\epsilon)^j\) for every \(j\ge1\).
+Substituting these bounds in~\eqref{eq:bin} and taking \(n\)-th roots gives
+\begin{equation}\label{eq:base}
+                      \mu=1+b .
+\end{equation}
+
+\begin{theorem}\label{thm:ratio}
+Put \(p=1/\mu\). For every sequence \(0\le k_n\le n-1\) with
+\(k_n/(n-1)\to x\in[0,1]\),
+\[
+ \lim_{n\to\infty}\frac1n\log\Prb(X_n=k_n)
+ =-D(x\Vert p),\qquad
+ D(x\Vert p)=x\log\frac{x}{p}+(1-x)\log\frac{1-x}{1-p},
+\]
+with \(0\log0=0\). Furthermore, \(\displaystyle\lim_{n\to\infty}M_n/M_{n-1}=\mu\).
+\end{theorem}
+\begin{proof}
+In~\eqref{eq:bin}, the entropy estimate for binomial coefficients gives
+\(n^{-1}\log\bin{n-1}{k_n}\to-x\log x-(1-x)\log(1-x)\).
+Also \(n^{-1}\log B_{n-k_n}\to(1-x)\log b\). At \(x=1\) the
+last conclusion follows directly from \(1\le B_j\le 16^j\).
+Subtract \(\log\mu\) and use~\eqref{eq:base}. This proves the pointwise
+claim at both endpoints as well as in the interior.
+
+The rate vanishes only at \(p\). On any closed subset of \([0,1]\)
+that excludes \(p\), bound the probability by \(n\) times its largest
+point mass. A convergent subsequence of maximising densities gives
+exponential decay by the pointwise claim. Consequently
+\(\E X_n/(n-1)\to p\). For each individual site,
+Lemma~\ref{lem:contract} gives probability \(M_{n-1}/M_n\).
+Taking the mean of the indicators proves the stated ratio.
+\end{proof}
+
+
+\subsection*{A second proof of the ratio limit}
+The avoidance splice can be omitted for the ratio assertion alone.
+In the following lemma take \(a_N=M_{N+1}\) and \(b_j=B_{j+1}\)
+using \eqref{eq:bin}. The only growth input is the ordinary root limit.
+\input{binomial_smoothing}
+
+\section{The two signs and longer intervals}
+\begin{corollary}
+For any fixed \(k\) distinct sites, their positive indicators tend
+jointly to independent Bernoulli variables of parameter \(1/\mu\).
+The sites may vary with \(n\). With both signs recorded, along any set
+of sites with fixed adjacency pattern the limiting joint intersection
+probability equals \(\mu^{-k}\) for compatible prescribed signs and
+zero otherwise.
+\end{corollary}
+\begin{proof}
+For every prescribed subset, apply Lemma~\ref{lem:contract} and
+\(M_{n-k}/M_n\to\mu^{-k}\), obtained by telescoping Theorem~\ref{thm:ratio}.
+Inclusion--exclusion gives each exact assignment, including vacant
+sites. For positive indicators the intersection probabilities factor.
+For both signs they factor between sets separated by at least one unused
+site. These consistent finite laws define a stationary one-dependent
+process on the site lattice. Adjacent opposite signs have probability
+zero, so the coloured process is not independent.
+\end{proof}
+
+The signed limit also has an explicit sampling rule. Make two vertices
+\((i,+),(i,-)\) at each site, with edges between opposite signs at
+distances zero and one. Orient each edge independently and uniformly;
+mark each vertex independently with probability \(8/\mu\), which is
+less than one by \cite{AP}. Occupy a marked vertex if all three of
+its edges point towards it. Adjacent vertices cannot both be occupied,
+whereas any independent set of \(k\) vertices is occupied with
+probability \(\mu^{-k}\). These are exactly the intersection
+probabilities above. This is the one-dependent hard-core law on this
+graph; its uniqueness from the one-site marginals is a general fact
+\cite[Lemma~23]{HL}.
+
+Another event has a simple interpretation without choosing a parity.
+Call an interval of \(2j+1\) consecutive labels \emph{exposed} if
+one upper and one lower arch leave the interval. For prescribed
+disjoint intervals \(I_a\) of lengths \(2j_a+1\), the exact probability is
+\begin{equation}\label{eq:blocks}
+ \Prb(\text{all }I_a\text{ exposed})
+    =\left(\prod_a M_{j_a+1}\right)\frac{M_{n-\sum_a j_a}}{M_n}.
+\end{equation}
+Indeed the interior of each interval is a path: an interior cycle would
+already be a full connected component. Its two free incidences are
+exposed to their respective half-planes. Adding a single vertex just
+before the interval and closing these incidences yields an order-\((j_a+1)\)
+meander. Deleting the added vertex inverts this operation. Contract
+the interiors independently, retaining one vertex per interval, to
+obtain~\eqref{eq:blocks}. Thus fixed disjoint intervals of this kind
+are asymptotically independent, with marginal limits \(M_{j+1}/\mu^j\).
+
+
+\input{joint_pressure}
+\input{idle_moves}
+\input{minimum}
+\input{attribution}
+\input{weighted_ratios}
+\input{uniform}
+\input{fixed_words}
+\input{conditioned}
+\input{runs}
+
+\section{Finite tests and related work}
+An exhaustive ordered-matching calculation checks the two-dimensional
+histogram for every \(1\le n\le8\). The largest catalogue contains
+\(1{,}430^2=2{,}044{,}900\) pairs before the connectivity test.
+At order eight there are \(n-1=7\) possible sites; the 128 prescribed
+subsets for the conditional law were checked individually.
+A separate inverse-splice implementation tests all admissible seam
+positions in the small catalogues. In the supplied finite tables the
+mixed binomial moments are obtained by distributing \(i\) positive
+and \(j\) negative marks in nonempty runs among the \(n-i-j\)
+remaining vertices. Two integer binomial inversions give the full
+joint histogram. The tables through order 38 use the existing
+values of \(M_n\) \cite{OEIS}.
+
+A second transfer records the preceding letter and both mark counts.
+Its coefficients agree with the joint table through order eleven.
+The supplement tests the unmarked returns of Theorem~\ref{thm:all-weighted-ratios}
+on every noncrossing matching with up to sixteen boundary ports and each
+appropriate odd split. To fix the sign convention, the code also compares
+the marks of individual ordered pairs with their sweep words through
+order seven. A separate check tests the 741 shifted finite differences
+available from the ordinary counts through order 38.
+
+Lando and Zvonkin \cite[Sec.~6]{LZ} studied the successive ratios
+numerically by rational interpolation. Albert and Paterson \cite{AP}
+use local moves and cluster enumeration to bound the growth constant.
+Caroppo et al.\ \cite{CDDV} extend that calculation with longer
+representatives of forbidden words.
+Belousov's prime decomposition for open meanders includes inserting
+odd inverse snakes at several intersections to bound the growth of
+almost irreducible objects \cite[Thm.~8]{Bel}. Delecroix et al.\
+\cite{DGZZ} study an asymptotic regime with a fixed number of minimal
+arches. Féray and Thévenin \cite{FT} obtain local convergence for
+uniform meandric systems sampled without conditioning on connectivity.
+Slote's operadic construction \cite[Definition~2]{Slote} treats
+insertion in a chosen input of a closed meander. The marked-run
+series is related to classical cluster marking of overlapping
+patterns \cite{GJ}. The use of local patterns in ratio-limit arguments has precedents in
+lattice models, notably Kesten's work on self-avoiding walks \cite{K}
+and Madras's pattern theorem for clusters \cite{Mad}. Here the
+fixed-site contraction gives an exact law under connectivity conditioning.
+The argument determines neither a numerical value of \(\mu\) nor the
+power correction to exponential growth.
+
+\paragraph{Computational and writing assistance.}
+OpenAI Codex assisted with developing the arguments, implementing checks,
+searching the literature and drafting the manuscript.
+\begingroup\small
+\begin{thebibliography}{99}\setlength{\itemsep}{1pt}
+\input{prior_refs}
+\bibitem{AP} M.\ H.\ Albert and M.\ S.\ Paterson.
+\href{https://doi.org/10.1016/j.jcta.2005.02.006}{Bounds for the growth rate of meander numbers}.
+\emph{J. Combin. Theory Ser. A} \textbf{112} (2005), 250--262.
+\bibitem{Bel} Y.\ Belousov. \href{https://doi.org/10.37236/13636}{Prime factorization of meanders}.
+\emph{Electron. J. Combin.} \textbf{33} (2026), P2.28.
+\bibitem{DGZZ} V.\ Delecroix, É.\ Goujard, P.\ Zograf and A.\ Zorich.
+\href{https://arxiv.org/abs/1705.05190}{Enumeration of meanders and Masur--Veech volumes}.
+\emph{Forum Math. Pi} \textbf{8} (2020), e4.
+\bibitem{FT} V.\ Féray and P.\ Thévenin.
+\href{https://academic.oup.com/imrn/article/2023/14/12538/6646026}{Components in meandric systems and the infinite noodle}.
+\emph{Int. Math. Res. Not.} (2023), 12538--12560. \href{https://doi.org/10.1093/imrn/rnad282}{Erratum}, 2024, 8481--8484.
+\bibitem{K} H.\ Kesten. \href{https://doi.org/10.1063/1.1704022}{On the number of self-avoiding walks}.
+\emph{J. Math. Phys.} \textbf{4} (1963), 960--969.
+\bibitem{LZ} S.\ K.\ Lando and A.\ K.\ Zvonkin.
+\href{https://www.labri.fr/perso/zvonkin/Research/Meanders-1992.pdf}{Meanders}.
+\emph{Selecta Math. Soviet.} \textbf{11} (1992), 117--144.
+\bibitem{Mad} N.\ Madras. \href{https://arxiv.org/abs/math/9902161}{A pattern theorem for lattice clusters}.
+\emph{Ann. Comb.} \textbf{3} (1999), 357--384.
+\bibitem{DZ} A. Dembo and O. Zeitouni.
+\href{https://doi.org/10.1007/978-3-642-03311-7}{Large Deviations Techniques and Applications}.
+Second edition (1998), corrected printing, Springer, 2010.
+\bibitem{GJ} I. P. Goulden and D. M. Jackson.
+\href{https://doi.org/10.1112/jlms/s2-20.3.567}{An inversion theorem for cluster decompositions of sequences with distinguished subsequences}.
+J. London Math. Soc. (2) \textbf{20} (1979), 567--576.
+\bibitem{HL} A. E. Holroyd and T. M. Liggett.
+\href{https://arxiv.org/abs/1403.2448}{Finitely dependent coloring}.
+Forum Math. Pi \textbf{4} (2016), e9.
+\bibitem{Slote} J. A. Slote.
+\href{https://joeslote.com/documents/operadic_techniques_meanders_WIP.pdf}{Operadic Techniques for Meander Enumeration}.
+Working paper, 2019.
+\bibitem{OEIS} OEIS Foundation Inc.
+\href{https://oeis.org/A005315}{A005315, closed meander numbers}.
+The supplementary input contains the table through order 38.
+\end{thebibliography}
+\endgroup
+\end{document}
