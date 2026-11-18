@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the individual manuscript corresponding to the result you use. Both bibliographic references are listed below."
+type: software
+title: "Closed meanders and special Smith forms: computational supplements"
+authors:
+  - family-names: Argunov
+    given-names: Iaroslav
+version: "2026-11-18.3"
+references:
+  - type: unpublished
+    authors:
+      - family-names: Argunov
+        given-names: Iaroslav
+    title: "Local arch statistics and ratio limits for closed meanders"
+    year: 2026
+  - type: unpublished
+    authors:
+      - family-names: Argunov
+        given-names: Iaroslav
+    title: "Special Smith forms of the meander and chromatic-join matrices"
+    year: 2026

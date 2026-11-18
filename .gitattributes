@@ -1,0 +1,3 @@
+# The certificates and their SHA-256 checks are byte-specific.
+* -text
+*.pdf binary
